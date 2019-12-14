@@ -53,7 +53,7 @@
 ENTRY(Reset_Handler)
 
 /* Highest address of the user mode stack */
-_estack = ORIGIN(RAM) + LENGTH(RAM);	/* end of "RAM" Ram type memory */
+_estack = 0x2000c000;	/* end of "RAM" Ram type memory */
 
 _Min_Heap_Size = 0x200 ;	/* required amount of heap  */
 _Min_Stack_Size = 0x400 ;	/* required amount of stack */
@@ -61,8 +61,8 @@ _Min_Stack_Size = 0x400 ;	/* required amount of stack */
 /* Memories definition */
 MEMORY
 {
-  RAM	(xrw)	: ORIGIN = 0x20000000,	LENGTH = 48K
-  FLASH	(rx)	: ORIGIN = 0x8000000,	LENGTH = 256K
+    RAM	(xrw)	: ORIGIN = 0x20000000,	LENGTH = 48K
+    FLASH	(rx)	: ORIGIN = 0x8000000,	LENGTH = 256K
 }
 
 /* Sections */
@@ -103,9 +103,9 @@ SECTIONS
   } >FLASH
 
   .ARM.extab   : { 
-    . = ALIGN(4);
-    *(.ARM.extab* .gnu.linkonce.armextab.*)
-    . = ALIGN(4);
+  	. = ALIGN(4);
+  	*(.ARM.extab* .gnu.linkonce.armextab.*)
+  	. = ALIGN(4);
   } >FLASH
   
   .ARM : {
@@ -160,12 +160,12 @@ SECTIONS
     _edata = .;        /* define a global symbol at data end */
     
   } >RAM AT> FLASH
-
+  
   /* Uninitialized data section into "RAM" Ram type memory */
   . = ALIGN(4);
   .bss :
   {
-    /* This is used by the startup in order to initialize the .bss section */
+    /* This is used by the startup in order to initialize the .bss secion */
     _sbss = .;         /* define a global symbol at bss start */
     __bss_start__ = _sbss;
     *(.bss)

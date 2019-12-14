@@ -8,9 +8,9 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
+-include Startup/subdir.mk
+-include Src/subdir.mk
 -include Drivers/STM32F1xx_HAL_Driver/Src/subdir.mk
--include Core/Startup/subdir.mk
--include Core/Src/subdir.mk
 -include subdir.mk
 -include objects.mk
 
@@ -41,8 +41,8 @@ all:
 main-build: LCD_Module.elf secondary-outputs
 
 # Tool invocations
-LCD_Module.elf: $(OBJS) $(USER_OBJS) C:\Users\Sunt\Desktop\LCD_Module_sunting\STM32F103RCTX_FLASH.ld
-	arm-none-eabi-gcc -o "LCD_Module.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\Sunt\Desktop\LCD_Module_sunting\STM32F103RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LCD_Module.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+LCD_Module.elf: $(OBJS) $(USER_OBJS) N:\OneDrive\ -\ Platinum\University\3\CS301_Embedded_System\Project\SUSTech-Embedded_System-Project\STM32F103RCTX_FLASH.ld
+	arm-none-eabi-gcc -o "LCD_Module.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"N:\OneDrive - Platinum\University\3\CS301_Embedded_System\Project\SUSTech-Embedded_System-Project\STM32F103RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LCD_Module.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
