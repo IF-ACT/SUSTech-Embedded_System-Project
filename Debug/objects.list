@@ -11,6 +11,7 @@
 "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.o"
 "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o"
 "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o"
+"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o"
 "Src/gpio.o"
 "Src/lcd.o"
 "Src/main.o"
@@ -19,4 +20,5 @@
 "Src/syscalls.o"
 "Src/sysmem.o"
 "Src/system_stm32f1xx.o"
+"Src/usart.o"
 "Startup/startup_stm32f103rctx.o"

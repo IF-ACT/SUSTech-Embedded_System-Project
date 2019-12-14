@@ -1,6 +1,6 @@
 #include "lcd.h"
 //#include "stdlib.h"
-#include "font.h"
+#include "font.h" 
 //#include "usart.h"
 //#include "delay.h"
 //////////////////////////////////////////////////////////////////////////////////	 
@@ -2754,7 +2754,6 @@ void LCD_Clear(uint16_t color) {
 	for (index = 0; index < totalpoint; index++)
 		LCD_WR_DATA(color);
 }
-
 // Fill the area with color
 // :(xend-xsta+1)*(yend-ysta+1)
 void LCD_Fill(uint16_t sx, uint16_t sy, uint16_t ex, uint16_t ey,
@@ -2786,19 +2785,6 @@ void LCD_Fill(uint16_t sx, uint16_t sy, uint16_t ex, uint16_t ey,
 		}
 	}
 }
-
-// Fresh whole screen once
-void LCD_Fresh(Color **screen)
-{
-	uint16_t i, j;
-	for (i = 0; i < lcddev.height; i++) {
-		LCD_SetCursor(0, i);   	//设置光标位置
-		LCD_WriteRAM_Prepare();     //开始写入GRAM
-		for (j = 0; j < lcddev.width; j++)
-			LCD_WR_DATA(screen[i][j]);     //写入数据
-	}
-}
-
 // Fill the area with color
 //(sx,sy),(ex,ey):填充矩形对角坐标,区域大小为:(ex-sx+1)*(ey-sy+1)
 void LCD_Color_Fill(uint16_t sx, uint16_t sy, uint16_t ex, uint16_t ey,
