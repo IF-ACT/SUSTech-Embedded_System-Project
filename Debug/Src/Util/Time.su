@@ -1,0 +1,3 @@
+Time.c:5:7:GetTime	4	static
+Time.c:10:6:Time_OnStart	8	static
+Time.c:15:6:Time_OnUpdate	16	static

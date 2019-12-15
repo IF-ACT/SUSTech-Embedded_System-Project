@@ -1,0 +1,43 @@
+#include "GameObject.h"
+
+#include "Renderer.h"
+#include "Time.h"
+
+void GameObject_Initialize
+(
+	GameObject* self, uint16_t pos_x, uint16_t pos_y, 
+	uint16_t collider, uint16_t width, uint16_t height,
+	Color** img
+){
+	self->speed_x = 0.0f;
+	self->speed_y = 0.0f;
+	self->pos_x = pos_x;
+	self->pos_y = pos_y;
+	self->collider = collider;
+	self->width = width;
+	self->height = height;
+	self->img = img;
+	self->__created = false;
+	self->__to_destroy = false;
+}
+
+void GameObject_OnCreate(GameObject* self)
+{
+	self->__created = true;
+}
+
+void GameObject_OnUpdate(GameObject* self)
+{
+	self->pos_x += (uint16_t)(self->speed_x * delta_time);
+	self->pos_y += (uint16_t)(self->speed_y * delta_time);
+}
+
+void GameObject_OnDestroy(GameObject* self)
+{
+	
+}
+
+void GameObject_OnRender(GameObject* self, Color** screen)
+{
+	Render(self, screen);
+}
