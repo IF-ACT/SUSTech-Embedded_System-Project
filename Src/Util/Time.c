@@ -1,10 +1,10 @@
 #include "Time.h"
 
-float __Time_Last_Update;
+float __Time_Last_Update = 0;
 
 float GetTime()
 {
-	// to impliment
+	return __Time_Last_Update + 1;
 }
 
 void Time_OnStart()

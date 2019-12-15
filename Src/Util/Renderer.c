@@ -1,5 +1,7 @@
 #include "Renderer.h"
 
+#include "mygpio.h"
+
 #define MAX(a, b) (a>b?a:b)
 #define MIN(a, b) (a<b?a:b)
 
@@ -29,6 +31,8 @@ Color** Flush(Color **screen)
 {
 	uint16_t i, j;
 	Color **temp;
+	uint16_t height = lcddev.height;
+	uint16_t width = lcddev.width;
 	// init
 	if (!__last_screen)
 	{
@@ -39,14 +43,25 @@ Color** Flush(Color **screen)
 		for (i = 0; i < lcddev.height; i++)
 			for (j = 0; j < lcddev.width; j++)
 				__last_screen[i][j] = TRANSPARENT;
+
+		println("Render init finished");
 	}
 	// flush
+	printlnf("height is %hu, width is %hu", height, width);
 	for (i = 0; i < lcddev.height; i++)
+	{
 		for (j = 0; j < lcddev.width; j++)
+		{
 			if (screen[i][j] != __last_screen[i][j])
-				LCD_Fast_DrawPoint(i, j, screen[i][j]);
+				LCD_Fast_DrawPoint(i-width/2, j, screen[i][j]);
+		}
+		if (!(i%20))
+			printlnf("flushing line %hu", i);
+	}
 	// cache
 	temp = __last_screen;
 	__last_screen = screen;
 	return temp;
+
+	println("Flushed");
 }

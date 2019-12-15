@@ -28,6 +28,9 @@
 #include "lcd.h"
 #include "stdio.h"
 
+#include "GameEngine.h"
+#include "mygpio.h"
+
 //#include "led.h"
 //#include "sys.h"
 //#include "key.h"
@@ -74,9 +77,6 @@ void SystemClock_Config(void);
   */
 int main(void)
 {
-	static unsigned char uRx_Data[1024] = {0};
-	static unsigned char uLength = 0;
-
   /* USER CODE BEGIN 1 */
 
   /* USER CODE END 1 */
@@ -102,98 +102,31 @@ int main(void)
   MX_GPIO_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
-
+  GameEngineLoop();
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-	uint8_t x = 0;
 
 	while (1) {
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
 
-		if (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_8) == GPIO_PIN_RESET) {
-		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_8, GPIO_PIN_SET);
-		HAL_GPIO_WritePin(GPIOD, GPIO_PIN_2, GPIO_PIN_SET);
-		} else {
-		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_8, GPIO_PIN_RESET);
-		HAL_GPIO_WritePin(GPIOD, GPIO_PIN_2, GPIO_PIN_RESET);
-		}
-//		printf("gggg");
-		HAL_UART_Transmit(&huart1, (char*)"99999999999999999999999999999999", 100, 0xffff);
 
-
-
-
-	switch (x) {
-	case 0:
-	LCD_Clear(WHITE);
-	BACK_COLOR = WHITE;
-	break;
-	case 1:
-	LCD_Clear(BLACK);
-	BACK_COLOR = BLACK;
-	break;
-	case 2:
-	LCD_Clear(BLUE);
-	BACK_COLOR = BLUE;
-	break;
-	case 3:
-	LCD_Clear(RED);
-	BACK_COLOR = RED;
-	break;
-	case 4:
-	LCD_Clear(MAGENTA);
-	BACK_COLOR = MAGENTA;
-	break;
-	case 5:
-	LCD_Clear(GREEN);
-	BACK_COLOR = GREEN;
-	break;
-	case 6:
-	LCD_Clear(CYAN);
-	BACK_COLOR = CYAN;
-	break;
-	case 7:
-	LCD_Clear(YELLOW);
-	BACK_COLOR = YELLOW;
-	break;
-	case 8:
-	LCD_Clear(BRRED);
-	BACK_COLOR = BRRED;
-	break;
-	case 9:
-	LCD_Clear(GRAY);
-	BACK_COLOR = GRAY;
-	break;
-	case 10:
-	LCD_Clear(LGRAY);
-
-	BACK_COLOR = LGRAY;
-	break;
-	case 11:
-	LCD_Clear(BROWN);
-	BACK_COLOR = BROWN;
-	break;
-	}
-	POINT_COLOR = RED;
-	LCD_ShowString(30, 40, 200, 24, 24, (uint8_t*) "a");
-	LCD_ShowString(30, 70, 200, 16, 16, (uint8_t*) "b");
-
-
-	POINT_COLOR = BLACK;
-	LCD_DrawRectangle(30, 150, 210, 190);
-	LCD_Fill(31, 151, 209, 189, YELLOW);
-	x++;
-	if (x == 12)
-	x = 0;
-	HAL_Delay(2000);
-
-	}
 
   /* USER CODE END 3 */
+	}
+
+	if (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_8) == GPIO_PIN_RESET)
+	{
+		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_8, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(GPIOD, GPIO_PIN_2, GPIO_PIN_SET);
+	} else {
+		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_8, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(GPIOD, GPIO_PIN_2, GPIO_PIN_RESET);
+	}
+
 }
 
 /**
@@ -263,8 +196,8 @@ break;
 void Error_Handler(void)
 {
   /* USER CODE BEGIN Error_Handler_Debug */
+	printlnf("error");
 	/* User can add his own implementation to report the HAL error return state */
-
   /* USER CODE END Error_Handler_Debug */
 }
 

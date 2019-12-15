@@ -1,4 +1,4 @@
 GameObject_Self.c:7:6:GameObject_Self_OnCreate	32	static
-GameObject_Self.c:15:6:GameObject_Self_OnUpdate	16	static
-GameObject_Self.c:20:6:GameObject_Self_OnDestroy	16	static
-GameObject_Self.c:28:6:GameObject_Self_OnRender	16	static
+GameObject_Self.c:13:6:GameObject_Self_OnUpdate	16	static
+GameObject_Self.c:18:6:GameObject_Self_OnDestroy	16	static
+GameObject_Self.c:26:6:GameObject_Self_OnRender	16	static
