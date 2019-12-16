@@ -8,6 +8,8 @@
 
 void Render(GameObject* game_object, Color **screen);
 
+Color** InitScreen(Color** screen);
+
 // return a new screen, after calling this, don't use former screen again
 Color** Flush(Color **screen);
 

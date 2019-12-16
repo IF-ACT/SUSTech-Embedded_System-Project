@@ -22,6 +22,7 @@ void GameEngineLoop()
 		{
 			event = ((GameEvent*)it->object);
 			game_object = event->game_object;
+			screen = InitScreen(screen);
 			Time_OnUpdate();
 
 			// Create
@@ -31,8 +32,6 @@ void GameEngineLoop()
 			}
 			// Update
 			event->OnUpdate(game_object);
-			// Render
-			event->OnRender(game_object, screen);
 			// Destroy
 			if (event->__ToDestroy(game_object))
 			{
@@ -42,7 +41,12 @@ void GameEngineLoop()
 				it = it->prev;
 				RemoveNode(it->next);
 			}
-			i++;
+			// Render
+			else
+			{
+				event->OnRender(game_object, screen);
+				i++;
+			}
 		}
 		// UI loop
 		for (it = UI.head; it; it = it->next)

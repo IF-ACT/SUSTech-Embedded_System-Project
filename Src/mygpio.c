@@ -11,7 +11,7 @@ char __msg[50];
 void println(const char* str)
 {
 	unsigned char* msg = (unsigned char*)strcat((char*)str, "\n");
-	HAL_UART_Transmit(&huart1,msg, strlen(__msg), 0xffff);
+	HAL_UART_Transmit(&huart1, msg, strlen(__msg), 0xffff);
 }
 
 void printlnf(const char* fmt, ...)

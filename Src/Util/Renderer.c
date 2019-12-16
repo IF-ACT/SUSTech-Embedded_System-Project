@@ -5,6 +5,10 @@
 #define MAX(a, b) (a>b?a:b)
 #define MIN(a, b) (a<b?a:b)
 
+#define __WIDTH 38
+#define __HEIGHT 48
+#define __SCALE 6
+
 Color **__last_screen = NULL;
 
 void Render(GameObject* game_object, Color **screen)
@@ -18,8 +22,8 @@ void Render(GameObject* game_object, Color **screen)
 	ex = game_object->pos_x + game_object->width / 2;
 	ey = game_object->pos_y + game_object->height / 2;
 	
-	for (i = MAX(sy, 0); i < MIN(ey, lcddev.height); i++)
-		for (j = MAX(sx, 0); j < MIN(ex, lcddev.width); j++)
+	for (i = MAX(sy, 0); i < MIN(ey, __HEIGHT); i++)
+		for (j = MAX(sx, 0); j < MIN(ex, __WIDTH); j++)
 		{
 			c = game_object->img[i - sy][j - sx];
 			if (c != TRANSPARENT)
@@ -27,37 +31,51 @@ void Render(GameObject* game_object, Color **screen)
 		}
 }
 
+Color** InitScreen(Color** screen)
+{
+	uint16_t i, j;
+
+	if(!screen)
+	{
+		screen = calloc(sizeof(Color*), __HEIGHT);
+
+		for (i = 0; i < __HEIGHT; i++)
+		screen[i] = calloc(sizeof(Color), __WIDTH);
+	}
+
+	for (i = 0; i < __HEIGHT; i++)
+		for (j = 0; j < __WIDTH; j++)
+			screen[i][j] = TRANSPARENT;
+
+	return screen;
+}
+
 Color** Flush(Color **screen)
 {
 	uint16_t i, j;
+	uint16_t sx, sy, ex, ey;
 	Color **temp;
-	uint16_t height = lcddev.height;
-	uint16_t width = lcddev.width;
 	// init
 	if (!__last_screen)
 	{
-		__last_screen = calloc(sizeof(Color*), lcddev.height);
-		for (i = 0; i < lcddev.height; i++)
-			__last_screen[i] = calloc(sizeof(Color), lcddev.width);
-
-		for (i = 0; i < lcddev.height; i++)
-			for (j = 0; j < lcddev.width; j++)
-				__last_screen[i][j] = TRANSPARENT;
-
+		LCD_Clear(BLACK);
+		__last_screen = InitScreen(__last_screen);
 		println("Render init finished");
 	}
 	// flush
-	printlnf("height is %hu, width is %hu", height, width);
-	for (i = 0; i < lcddev.height; i++)
-	{
-		for (j = 0; j < lcddev.width; j++)
+	for (i = 0; i < __HEIGHT; i++)
+		for (j = 0; j < __WIDTH; j++)
 		{
 			if (screen[i][j] != __last_screen[i][j])
-				LCD_Fast_DrawPoint(i-width/2, j, screen[i][j]);
+			{
+				sx = j * __SCALE;
+				sy = i * __SCALE;
+				ex = sx + __SCALE;
+				ey = sy + __SCALE;
+				LCD_Fill(sx, sy, ex, ey, screen[i][j]);
+				printlnf("flushing %hu, %hu", j, i);
+			}
 		}
-		if (!(i%20))
-			printlnf("flushing line %hu", i);
-	}
 	// cache
 	temp = __last_screen;
 	__last_screen = screen;
