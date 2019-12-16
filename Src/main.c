@@ -32,6 +32,7 @@
 #include "mygpio.h"
 #include "GameObject_Self.h"
 #include "GameEvent.h"
+#include "Img_TestImages.h"
 
 //#include "led.h"
 //#include "sys.h"
@@ -105,9 +106,10 @@ int main(void)
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
 
-  println("???");
-
   GameObject_Self *self = malloc(sizeof(GameObject_Self));
+
+  GameObject_Self_Init(self, 1, 15, 20, 10, 10, 10, Img_GreenBlock_10x10);
+
   GameEvent *event = RegistGameEvent(
 						  self,
 						  GameObject_Self_OnCreate, GameObject_Self_OnUpdate, GameObject_Self_OnDestroy,

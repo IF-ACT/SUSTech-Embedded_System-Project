@@ -21,9 +21,8 @@ Src/GameFrame/GameObject_Self.o: ../Src/GameFrame/GameObject_Self.c \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h \
- ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
- N:/OneDrive\ -\ Platinum/University/3/CS301_Embedded_System/Project/SUSTech-Embedded_System-Project/Img/Img_TestImages.h \
- ../Inc/lcd.h ../Inc/Time.h ../Inc/mygpio.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h ../Inc/Time.h \
+ ../Inc/mygpio.h
 
 ../Inc/GameObject_Self.h:
 
@@ -76,10 +75,6 @@ Src/GameFrame/GameObject_Self.o: ../Src/GameFrame/GameObject_Self.c \
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h:
 
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:
-
-N:/OneDrive\ -\ Platinum/University/3/CS301_Embedded_System/Project/SUSTech-Embedded_System-Project/Img/Img_TestImages.h:
-
-../Inc/lcd.h:
 
 ../Inc/Time.h:
 

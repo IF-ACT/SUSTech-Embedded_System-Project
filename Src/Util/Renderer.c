@@ -11,23 +11,29 @@
 
 Color **__last_screen = NULL;
 
-void Render(GameObject* game_object, Color **screen)
+void Render(GameObject* game_object, Color** screen)
 {
-	unsigned sx, sy, ex, ey;
-	unsigned i, j;
+	int sx, sy, ex, ey;
+	uint16_t rsx, rsy, rex, rey;
+	int i, j;
 	Color c;
 
-	sx = game_object->pos_x - (game_object->width + 1) / 2;
-	sy = game_object->pos_y - (game_object->height + 1) / 2;
-	ex = game_object->pos_x + game_object->width / 2;
-	ey = game_object->pos_y + game_object->height / 2;
+	sx = (int)game_object->pos_x - (game_object->width + 1) / 2;
+	sy = (int)game_object->pos_y - (game_object->height + 1) / 2;
+	ex = (int)game_object->pos_x + game_object->width / 2;
+	ey = (int)game_object->pos_y + game_object->height / 2;
+
+	rsx = (uint16_t)MAX(sx, 0);
+	rsy = (uint16_t)MAX(sy, 0);
+	rex = (uint16_t)MIN(ex, __WIDTH);
+	rey = (uint16_t)MIN(ey, __HEIGHT);
 	
-	for (i = MAX(sy, 0); i < MIN(ey, __HEIGHT); i++)
-		for (j = MAX(sx, 0); j < MIN(ex, __WIDTH); j++)
+	for (i = 0; i < rey - rsy; i++)
+		for (j = 0; j < rex - rsx; j++)
 		{
-			c = game_object->img[i - sy][j - sx];
+			c = game_object->img[i * (rex - rsx) + j];
 			if (c != TRANSPARENT)
-				screen[i][j] = c;
+				screen[i + rsy][j + rsx] = c;
 		}
 }
 

@@ -16,30 +16,26 @@ void GameEngineLoop()
 
 	while (true)
 	{
+		// init
 		i = 0; j = 0;
+		screen = InitScreen(screen);
 		// object loop
 		for (it = objects.head; it; it = it->next)
 		{
 			event = ((GameEvent*)it->object);
 			game_object = event->game_object;
-			screen = InitScreen(screen);
 			Time_OnUpdate();
 
-			println("creating");
 			// Create
 			if (!event->__Created(game_object))
 			{
 				event->OnCreate(game_object);
 			}
-
-			println("updating");
 			// Update
 			event->OnUpdate(game_object);
-
 			// Destroy
 			if (event->__ToDestroy(game_object))
 			{
-				println("destroying");
 				event->OnDestroy(game_object);
 
 				free(event);
@@ -49,7 +45,6 @@ void GameEngineLoop()
 			// Render
 			else
 			{
-				println("rendering");
 				event->OnRender(game_object, screen);
 				i++;
 			}

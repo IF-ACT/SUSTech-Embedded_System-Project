@@ -10,6 +10,15 @@ typedef struct GameObject_Self
 
 } GameObject_Self;
 
+void GameObject_Self_Init(
+	GameObject_Self* self,
+	unsigned life,
+	uint16_t pos_x, uint16_t pos_y, 
+	uint16_t collider,
+	uint16_t width, uint16_t height,
+	Color* img
+	);
+
 void GameObject_Self_OnCreate(GameObject_Self* self);
 void GameObject_Self_OnUpdate(GameObject_Self* self);
 void GameObject_Self_OnDestroy(GameObject_Self* self);

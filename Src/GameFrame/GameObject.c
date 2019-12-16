@@ -7,12 +7,12 @@ void GameObject_Initialize
 (
 	GameObject* self, uint16_t pos_x, uint16_t pos_y, 
 	uint16_t collider, uint16_t width, uint16_t height,
-	Color** img
+	Color* img
 ){
 	self->speed_x = 0.0f;
 	self->speed_y = 0.0f;
-	self->pos_x = pos_x;
-	self->pos_y = pos_y;
+	self->pos_x = (float)pos_x;
+	self->pos_y = (float)pos_y;
 	self->collider = collider;
 	self->width = width;
 	self->height = height;
@@ -28,8 +28,8 @@ void GameObject_OnCreate(GameObject* self)
 
 void GameObject_OnUpdate(GameObject* self)
 {
-	self->pos_x += (uint16_t)(self->speed_x * delta_time);
-	self->pos_y += (uint16_t)(self->speed_y * delta_time);
+	self->pos_x += self->speed_x * delta_time;
+	self->pos_y += self->speed_y * delta_time;
 }
 
 void GameObject_OnDestroy(GameObject* self)

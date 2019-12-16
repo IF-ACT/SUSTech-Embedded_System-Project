@@ -1,2 +1,2 @@
 LinkedList.c:3:7:Push	32	static
-LinkedList.c:27:6:RemoveNode	16	static
+LinkedList.c:25:6:RemoveNode	16	static

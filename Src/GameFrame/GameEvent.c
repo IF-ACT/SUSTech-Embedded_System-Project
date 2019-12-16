@@ -14,6 +14,7 @@ GameEvent* RegistGameEvent
 
 	ge->game_object = game_object;
 	ge->OnCreate = OnCreate;
+	ge->OnUpdate = OnUpdate;
 	ge->OnDestroy = OnDestroy;
 	ge->OnRender = OnRender;
 	ge->__Created = __Created;

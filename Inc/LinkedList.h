@@ -17,7 +17,6 @@ typedef struct LinkedList
 {
 	Node *head;
 	Node *tail;
-	unsigned length;
 
 } LinkedList;
 
