@@ -104,20 +104,22 @@ int main(void)
   MX_GPIO_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
-  HAL_Delay(2000);
 
   println("???");
-  /*
+
   GameObject_Self *self = malloc(sizeof(GameObject_Self));
   GameEvent *event = RegistGameEvent(
 						  self,
 						  GameObject_Self_OnCreate, GameObject_Self_OnUpdate, GameObject_Self_OnDestroy,
 						  GameObject_Self_OnRender, __GameObject_Self_Created, __GameObject_Self_ToDestroy
 						);
+
   println("regested");
+
   Push(&objects, event);
+
   println("pushed");
-  */
+
   GameEngineLoop();
   /* USER CODE END 2 */
 
