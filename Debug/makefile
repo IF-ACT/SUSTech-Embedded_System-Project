@@ -10,6 +10,7 @@ RM := rm -rf
 -include sources.mk
 -include Startup/subdir.mk
 -include Src/Util/subdir.mk
+-include Src/OverAllEnv/subdir.mk
 -include Src/GameFrame/subdir.mk
 -include Src/subdir.mk
 -include Drivers/STM32F1xx_HAL_Driver/Src/subdir.mk

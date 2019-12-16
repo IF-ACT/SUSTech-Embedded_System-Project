@@ -19,13 +19,10 @@
 /* USER CODE END Header */
 
 /* Includes ------------------------------------------------------------------*/
-#include "main.h"
-#include "usart.h"
-#include "gpio.h"
-
-/* Private includes ----------------------------------------------------------*/
-/* USER CODE BEGIN Includes */
-#include "lcd.h"
+#include <OverAllEnv/gpio.h>
+#include <OverAllEnv/lcd.h>
+#include <OverAllEnv/main.h>
+#include <OverAllEnv/usart.h>
 #include <stdlib.h>
 
 #include "GameEngine.h"

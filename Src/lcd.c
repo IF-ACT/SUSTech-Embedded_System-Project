@@ -1,6 +1,5 @@
-#include "lcd.h"
-//#include "stdlib.h"
-#include "font.h" 
+#include <OverAllEnv/font.h>
+#include <OverAllEnv/lcd.h>
 //#include "usart.h"
 //#include "delay.h"
 //////////////////////////////////////////////////////////////////////////////////	 
