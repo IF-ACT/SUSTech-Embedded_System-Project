@@ -36,3 +36,12 @@ void inline GameObject_OnRender(GameObject* self, Color** screen)
 {
 	Render(self, screen);
 }
+
+bool __GameObject_Created(GameObject* self)
+{
+	return self->__created;
+}
+bool __GameObject_ToDestroy(GameObject* self)
+{
+	return self->__to_destroy;
+}

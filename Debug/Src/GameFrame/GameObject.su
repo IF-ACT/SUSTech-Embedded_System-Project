@@ -2,3 +2,5 @@ GameObject.c:6:6:GameObject_Initialize	24	static
 GameObject.c:24:13:GameObject_OnCreate	16	static
 GameObject.c:29:13:GameObject_OnUpdate	24	static
 GameObject.c:35:13:GameObject_OnRender	16	static
+GameObject.c:40:6:__GameObject_Created	16	static
+GameObject.c:44:6:__GameObject_ToDestroy	16	static

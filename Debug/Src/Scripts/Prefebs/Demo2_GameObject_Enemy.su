@@ -1,0 +1,7 @@
+Demo2_GameObject_Enemy.c:3:6:Demo2_Init	40	static
+Demo2_GameObject_Enemy.c:21:6:Demo2_OnCreate	16	static
+Demo2_GameObject_Enemy.c:27:6:Demo2_OnUpdate	16	static
+Demo2_GameObject_Enemy.c:32:6:Demo2_OnDestroy	16	static
+Demo2_GameObject_Enemy.c:37:6:Demo2_OnRender	16	static
+Demo2_GameObject_Enemy.c:42:6:__Demo2_Created	16	static
+Demo2_GameObject_Enemy.c:47:6:__Demo2_ToDestroy	16	static

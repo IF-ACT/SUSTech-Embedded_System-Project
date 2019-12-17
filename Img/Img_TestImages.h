@@ -18,4 +18,11 @@ Color Img_GreenBlock_10x10[10][10] = {
 
 Color Img_None_1x1[1][1] = {0x0000};
 
+Color Img_RedBlock_4x4[4][4] = {
+	{RED, RED, RED, RED},
+	{RED, RED, RED, RED},
+	{RED, RED, RED, RED},
+	{RED, RED, RED, RED}
+};
+
 #endif

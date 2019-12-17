@@ -39,4 +39,7 @@ void GameObject_OnUpdate(GameObject* self);
 void GameObject_OnDestroy(GameObject* self);
 void GameObject_OnRender(GameObject* self, Color** screen);
 
+bool __GameObject_Created(GameObject* self);
+bool __GameObject_ToDestroy(GameObject* self);
+
 #endif

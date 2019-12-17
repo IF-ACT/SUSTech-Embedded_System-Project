@@ -21,7 +21,6 @@ void GameObject_Self_Init(
 
 void GameObject_Self_OnCreate(GameObject_Self* self);
 void GameObject_Self_OnUpdate(GameObject_Self* self);
-void GameObject_Self_OnDestroy(GameObject_Self* self);
 void GameObject_Self_OnRender(GameObject_Self* self, Color** screen);
 
 bool __GameObject_Self_Created(GameObject_Self* self);
