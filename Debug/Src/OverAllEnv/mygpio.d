@@ -1,4 +1,4 @@
-Src/lcd.o: ../Src/lcd.c ../Inc/OverAllEnv/font.h ../Inc/OverAllEnv/lcd.h \
+Src/OverAllEnv/mygpio.o: ../Src/OverAllEnv/mygpio.c \
  ../Inc/OverAllEnv/main.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h \
  N:/OneDrive\ -\ Platinum/University/3/CS301_Embedded_System/Project/SUSTech-Embedded_System-Project/Inc/OverAllEnv/stm32f1xx_hal_conf.h \
@@ -21,11 +21,8 @@ Src/lcd.o: ../Src/lcd.c ../Inc/OverAllEnv/font.h ../Inc/OverAllEnv/lcd.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h \
- ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
-
-../Inc/OverAllEnv/font.h:
-
-../Inc/OverAllEnv/lcd.h:
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
+ ../Inc/OverAllEnv/usart.h ../Inc/OverAllEnv/main.h ../Inc/mygpio.h
 
 ../Inc/OverAllEnv/main.h:
 
@@ -72,3 +69,9 @@ N:/OneDrive\ -\ Platinum/University/3/CS301_Embedded_System/Project/SUSTech-Embe
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h:
 
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:
+
+../Inc/OverAllEnv/usart.h:
+
+../Inc/OverAllEnv/main.h:
+
+../Inc/mygpio.h:

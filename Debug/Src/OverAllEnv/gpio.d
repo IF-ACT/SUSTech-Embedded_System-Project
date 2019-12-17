@@ -1,4 +1,4 @@
-Src/gpio.o: ../Src/gpio.c ../Inc/OverAllEnv/gpio.h \
+Src/OverAllEnv/gpio.o: ../Src/OverAllEnv/gpio.c ../Inc/OverAllEnv/gpio.h \
  ../Inc/OverAllEnv/main.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h \
  N:/OneDrive\ -\ Platinum/University/3/CS301_Embedded_System/Project/SUSTech-Embedded_System-Project/Inc/OverAllEnv/stm32f1xx_hal_conf.h \

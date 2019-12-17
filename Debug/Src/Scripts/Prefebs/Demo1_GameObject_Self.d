@@ -1,5 +1,9 @@
-Src/OverAllEnv/main.o: ../Src/OverAllEnv/main.c ../Inc/OverAllEnv/gpio.h \
- ../Inc/OverAllEnv/main.h \
+Src/Scripts/Prefebs/Demo1_GameObject_Self.o: \
+ ../Src/Scripts/Prefebs/Demo1_GameObject_Self.c \
+ ../Src/Scripts/Prefebs/Demo1_GameObject_Self.h ../Inc/GameObject_Self.h \
+ ../Inc/GameObject.h \
+ N:/OneDrive\ -\ Platinum/University/3/CS301_Embedded_System/Project/SUSTech-Embedded_System-Project/Inc/OverAllEnv/lcd.h \
+ N:/OneDrive\ -\ Platinum/University/3/CS301_Embedded_System/Project/SUSTech-Embedded_System-Project/Inc/OverAllEnv/main.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h \
  N:/OneDrive\ -\ Platinum/University/3/CS301_Embedded_System/Project/SUSTech-Embedded_System-Project/Inc/OverAllEnv/stm32f1xx_hal_conf.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h \
@@ -21,19 +25,17 @@ Src/OverAllEnv/main.o: ../Src/OverAllEnv/main.c ../Inc/OverAllEnv/gpio.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h \
- ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
- ../Inc/OverAllEnv/lcd.h ../Inc/OverAllEnv/main.h \
- ../Inc/OverAllEnv/usart.h ../Inc/mygpio.h \
- N:/OneDrive\ -\ Platinum/University/3/CS301_Embedded_System/Project/SUSTech-Embedded_System-Project/Src/Scripts/Routines/Demo4_Routine.h \
- N:/OneDrive\ -\ Platinum/University/3/CS301_Embedded_System/Project/SUSTech-Embedded_System-Project/Src/Scripts/Prefebs/Demo1_GameObject_Self.h \
- ../Inc/GameObject_Self.h ../Inc/GameObject.h \
- N:/OneDrive\ -\ Platinum/University/3/CS301_Embedded_System/Project/SUSTech-Embedded_System-Project/Inc/OverAllEnv/lcd.h \
- N:/OneDrive\ -\ Platinum/University/3/CS301_Embedded_System/Project/SUSTech-Embedded_System-Project/Img/Img_TestImages.h \
- ../Inc/GameEvent.h ../Inc/GameEngine.h ../Inc/LinkedList.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 
-../Inc/OverAllEnv/gpio.h:
+../Src/Scripts/Prefebs/Demo1_GameObject_Self.h:
 
-../Inc/OverAllEnv/main.h:
+../Inc/GameObject_Self.h:
+
+../Inc/GameObject.h:
+
+N:/OneDrive\ -\ Platinum/University/3/CS301_Embedded_System/Project/SUSTech-Embedded_System-Project/Inc/OverAllEnv/lcd.h:
+
+N:/OneDrive\ -\ Platinum/University/3/CS301_Embedded_System/Project/SUSTech-Embedded_System-Project/Inc/OverAllEnv/main.h:
 
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:
 
@@ -78,29 +80,3 @@ N:/OneDrive\ -\ Platinum/University/3/CS301_Embedded_System/Project/SUSTech-Embe
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h:
 
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:
-
-../Inc/OverAllEnv/lcd.h:
-
-../Inc/OverAllEnv/main.h:
-
-../Inc/OverAllEnv/usart.h:
-
-../Inc/mygpio.h:
-
-N:/OneDrive\ -\ Platinum/University/3/CS301_Embedded_System/Project/SUSTech-Embedded_System-Project/Src/Scripts/Routines/Demo4_Routine.h:
-
-N:/OneDrive\ -\ Platinum/University/3/CS301_Embedded_System/Project/SUSTech-Embedded_System-Project/Src/Scripts/Prefebs/Demo1_GameObject_Self.h:
-
-../Inc/GameObject_Self.h:
-
-../Inc/GameObject.h:
-
-N:/OneDrive\ -\ Platinum/University/3/CS301_Embedded_System/Project/SUSTech-Embedded_System-Project/Inc/OverAllEnv/lcd.h:
-
-N:/OneDrive\ -\ Platinum/University/3/CS301_Embedded_System/Project/SUSTech-Embedded_System-Project/Img/Img_TestImages.h:
-
-../Inc/GameEvent.h:
-
-../Inc/GameEngine.h:
-
-../Inc/LinkedList.h:

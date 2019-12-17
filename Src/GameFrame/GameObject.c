@@ -21,23 +21,18 @@ void GameObject_Initialize
 	self->__to_destroy = false;
 }
 
-void GameObject_OnCreate(GameObject* self)
+void inline GameObject_OnCreate(GameObject* self)
 {
 	self->__created = true;
 }
 
-void GameObject_OnUpdate(GameObject* self)
+void inline GameObject_OnUpdate(GameObject* self)
 {
 	self->pos_x += self->speed_x * delta_time;
 	self->pos_y += self->speed_y * delta_time;
 }
 
-void GameObject_OnDestroy(GameObject* self)
-{
-	
-}
-
-void GameObject_OnRender(GameObject* self, Color** screen)
+void inline GameObject_OnRender(GameObject* self, Color** screen)
 {
 	Render(self, screen);
 }

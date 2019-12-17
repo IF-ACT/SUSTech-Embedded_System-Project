@@ -20,6 +20,7 @@ Drivers/STM32F1xx_HAL_Driver/Src \
 Src \
 Src/GameFrame \
 Src/OverAllEnv \
+Src/Scripts/Prefebs \
 Src/Util \
 Startup \
 

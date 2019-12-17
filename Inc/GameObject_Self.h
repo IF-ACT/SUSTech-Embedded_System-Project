@@ -17,7 +17,7 @@ void GameObject_Self_Init(
 	uint16_t collider,
 	uint16_t width, uint16_t height,
 	Color* img
-	);
+);
 
 void GameObject_Self_OnCreate(GameObject_Self* self);
 void GameObject_Self_OnUpdate(GameObject_Self* self);

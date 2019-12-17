@@ -25,11 +25,8 @@
 #include <OverAllEnv/usart.h>
 #include <stdlib.h>
 
-#include "GameEngine.h"
 #include "mygpio.h"
-#include "GameObject_Self.h"
-#include "GameEvent.h"
-#include "Img_TestImages.h"
+#include "Demo4_Routine.h"
 
 //#include "led.h"
 //#include "sys.h"
@@ -102,24 +99,8 @@ int main(void)
   MX_GPIO_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
-
-  GameObject_Self *self = malloc(sizeof(GameObject_Self));
-
-  GameObject_Self_Init(self, 1, 15, 20, 10, 10, 10, Img_GreenBlock_10x10);
-
-  GameEvent *event = RegistGameEvent(
-						  self,
-						  GameObject_Self_OnCreate, GameObject_Self_OnUpdate, GameObject_Self_OnDestroy,
-						  GameObject_Self_OnRender, __GameObject_Self_Created, __GameObject_Self_ToDestroy
-						);
-
-  println("regested");
-
-  Push(&objects, event);
-
-  println("pushed");
-
-  GameEngineLoop();
+  // 开启场景
+  Demo4_Routine();
   /* USER CODE END 2 */
 
   /* Infinite loop */

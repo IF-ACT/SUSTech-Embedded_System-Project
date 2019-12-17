@@ -16,4 +16,6 @@ Color Img_GreenBlock_10x10[10][10] = {
 	{GREEN,GREEN,GREEN,GREEN,GREEN,GREEN,GREEN,GREEN,GREEN,GREEN}
 };
 
+Color Img_None_1x1[1][1] = {0x0000};
+
 #endif
