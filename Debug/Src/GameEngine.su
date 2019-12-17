@@ -1,1 +1,4 @@
-GameEngine.c:8:6:GameEngineLoop	32	static
+GameEngine.c:7:6:GameEngineInit	4	static
+GameEngine.c:19:6:GameEngineLoop	24	static
+GameEngine.c:95:6:GameOver	4	static
+GameEngine.c:100:10:__ObjectEvent_LoopOnce	32	static

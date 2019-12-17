@@ -10,6 +10,8 @@
 
 void Demo4_Routine(){
 
+	GameEngineInit();
+
 	// regester demo 1
 	Demo1_GameObject_Self *demo1 = malloc(sizeof(Demo1_GameObject_Self));
 	Demo1_Init(demo1, 1, 15, 20, 10, 10, 10, Img_GreenBlock_10x10, "Demo1");
@@ -18,8 +20,7 @@ void Demo4_Routine(){
 							Demo1_OnCreate, Demo1_OnUpdate, Demo1_OnDestroy,
 							Demo1_OnRender, __Demo1_Created, __Demo1_ToDestroy
 						);
-
-	Push(&objects, event);
+	Engine_SelfEvent = event;
 
 	// regester demo 2
 	Demo2_GameObject_Enemy* demo2 = malloc(sizeof(Demo2_GameObject_Enemy));
@@ -29,7 +30,7 @@ void Demo4_Routine(){
 		Demo2_OnCreate, Demo2_OnUpdate, Demo2_OnDestroy,
 		Demo2_OnRender, __Demo2_Created, __Demo2_ToDestroy
 	);
-	Push(&objects, event);
+	Push(&Engine_EnemyEvents, event);
 
 	GameEngineLoop();
 }

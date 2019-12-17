@@ -9,6 +9,18 @@
 #define __HEIGHT 48
 #define __SCALE 6
 
+void __PrintScreen(Color** screen)
+{
+	int i, j;
+	for (i = 0; i < __HEIGHT; i++)
+	{
+		for (j = 0; j < __WIDTH; j++)
+		{
+			printlnf("%hu ", screen);
+		}
+	}
+}
+
 Color **__last_screen = NULL;
 
 void Render(GameObject* game_object, Color** screen)
@@ -33,7 +45,9 @@ void Render(GameObject* game_object, Color** screen)
 		{
 			c = game_object->img[i * (rex - rsx) + j];
 			if (c != TRANSPARENT)
+			{
 				screen[i + rsy][j + rsx] = c;
+			}
 		}
 }
 
@@ -55,6 +69,7 @@ Color** InitScreen(Color** screen)
 
 	return screen;
 }
+
 
 Color** Flush(Color **screen)
 {
@@ -85,7 +100,9 @@ Color** Flush(Color **screen)
 	// cache
 	temp = __last_screen;
 	__last_screen = screen;
-	return temp;
-
+	
 	println("Flushed");
+	
+	return temp;
 }
+
