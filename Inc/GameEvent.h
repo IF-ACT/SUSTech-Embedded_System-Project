@@ -13,8 +13,6 @@ typedef struct GameEvent
 	void (*OnUpdate)(void*);
 	void (*OnDestroy)(void*);
 	void (*OnRender)(void*, Color**);
-	bool (*__Created)(void*);
-	bool (*__ToDestroy)(void*);
 
 } GameEvent;
 
@@ -24,9 +22,7 @@ GameEvent* RegistGameEvent
 	void (*OnCreate)(void*),
 	void (*OnUpdate)(void*),
 	void (*OnDestroy)(void*),
-	void (*OnRender)(void*, Color**),
-	bool (*__Created)(void*),
-	bool (*__ToDestroy)(void*)
+	void (*OnRender)(void*, Color**)
 );
 
 #endif

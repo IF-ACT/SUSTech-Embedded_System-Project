@@ -30,9 +30,9 @@ void inline GameObject_Self_OnCreate(GameObject_Self* self)
 void inline GameObject_Self_OnUpdate(GameObject_Self* self)
 {
 	if (Engine_KeyPressed > 0)
-		self->base.speed_x = 0.5f;
+		self->base.speed_x = -0.7f;
 	else if (Engine_KeyPressed < 0)
-		self->base.speed_x = -0.5f;
+		self->base.speed_x = 0.7f;
 	else
 		self->base.speed_x = 0.0f;
 	GameObject_OnUpdate(&self->base);

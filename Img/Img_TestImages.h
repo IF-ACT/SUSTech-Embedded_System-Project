@@ -25,4 +25,11 @@ Color Img_RedBlock_4x4[4][4] = {
 	{RED, RED, RED, RED}
 };
 
+Color Img_GreenBlock_4x4[4][4] = {
+	{GREEN,GREEN,GREEN,GREEN},
+	{GREEN,GREEN,GREEN,GREEN},
+	{GREEN,GREEN,GREEN,GREEN},
+	{GREEN,GREEN,GREEN,GREEN}
+};
+
 #endif

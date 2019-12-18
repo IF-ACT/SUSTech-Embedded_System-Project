@@ -8,8 +8,20 @@ typedef struct GameObject_Bullet
 	GameObject base;
 	unsigned damage;
 	uint16_t ttl;
+	bool is_enemy;
 
 } GameObject_Bullet;
+
+void GameObject_Bullet_Init(
+	GameObject_Bullet* self,
+	uint16_t ttl, unsigned damage,
+	uint16_t pos_x, uint16_t pos_y,
+	float speed_x, float speed_y,
+	uint16_t collider,
+	uint16_t width, uint16_t height,
+	Color* img,
+	bool is_enemy
+);
 
 void GameObject_Bullet_OnCreate(GameObject_Bullet* self);
 void GameObject_Bullet_OnUpdate(GameObject_Bullet* self);

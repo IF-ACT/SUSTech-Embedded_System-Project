@@ -1,0 +1,5 @@
+RoyalCoin_GameObject_Bullet.c:6:6:RoyalCoin_Init	56	static
+RoyalCoin_GameObject_Bullet.c:23:6:RoyalCoin_OnCreate	16	static
+RoyalCoin_GameObject_Bullet.c:28:6:RoyalCoin_OnUpdate	16	static
+RoyalCoin_GameObject_Bullet.c:33:6:RoyalCoin_OnDestroy	16	static
+RoyalCoin_GameObject_Bullet.c:38:6:RoyalCoin_OnRender	16	static

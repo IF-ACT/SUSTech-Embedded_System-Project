@@ -24,7 +24,8 @@ Src/GameEngine.o: ../Src/GameEngine.c ../Inc/GameEngine.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
- ../Inc/Renderer.h ../Inc/GameObject.h ../Inc/Time.h ../Inc/mygpio.h
+ ../Inc/Renderer.h ../Inc/GameObject.h ../Inc/Time.h ../Inc/mygpio.h \
+ ../Inc/GameObject.h
 
 ../Inc/GameEngine.h:
 
@@ -87,3 +88,5 @@ N:/OneDrive\ -\ Platinum/University/3/CS301_Embedded_System/Project/SUSTech-Embe
 ../Inc/Time.h:
 
 ../Inc/mygpio.h:
+
+../Inc/GameObject.h:

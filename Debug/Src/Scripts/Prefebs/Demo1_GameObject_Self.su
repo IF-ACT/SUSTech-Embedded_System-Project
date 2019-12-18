@@ -1,7 +1,7 @@
-Demo1_GameObject_Self.c:3:6:Demo1_Init	40	static
-Demo1_GameObject_Self.c:25:6:Demo1_OnCreate	16	static
-Demo1_GameObject_Self.c:33:6:Demo1_OnUpdate	16	static
-Demo1_GameObject_Self.c:43:6:Demo1_OnDestroy	16	static
-Demo1_GameObject_Self.c:51:6:Demo1_OnRender	16	static
-Demo1_GameObject_Self.c:58:6:__Demo1_Created	16	static
-Demo1_GameObject_Self.c:63:6:__Demo1_ToDestroy	16	static
+Demo1_GameObject_Self.c:4:6:Demo1_Init	40	static
+Demo1_GameObject_Self.c:26:6:Demo1_OnCreate	16	static
+Demo1_GameObject_Self.c:34:6:Demo1_OnUpdate	16	static
+Demo1_GameObject_Self.c:44:6:Demo1_OnDestroy	16	static
+Demo1_GameObject_Self.c:52:6:Demo1_OnRender	16	static
+Demo1_GameObject_Self.c:59:6:__Demo1_Created	16	static
+Demo1_GameObject_Self.c:64:6:__Demo1_ToDestroy	16	static

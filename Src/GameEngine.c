@@ -3,6 +3,7 @@
 #include "Renderer.h"
 #include "Time.h"
 #include "mygpio.h"
+#include "GameObject.h"
 
 void GameEngineInit()
 {
@@ -14,6 +15,18 @@ void GameEngineInit()
 	Game_ChapterPassed = false;
 
 	Engine_KeyPressed = 0;
+
+	Engine_EnemyEvents.head = malloc(sizeof(Node));
+	Engine_EnemyEvents.head->next = NULL;
+	Engine_EnemyEvents.tail = Engine_EnemyEvents.head;
+
+	Engine_BulletEvents.head = malloc(sizeof(Node));
+	Engine_BulletEvents.head->next = NULL;
+	Engine_BulletEvents.tail = Engine_BulletEvents.head;
+
+	Engine_UIEvents.head = malloc(sizeof(Node));
+	Engine_UIEvents.head->next = NULL;
+	Engine_UIEvents.tail = Engine_UIEvents.head;
 }
 
 void GameEngineLoop()
@@ -37,14 +50,14 @@ void GameEngineLoop()
 			self_object = Engine_SelfEvent->game_object;
 
 			// Create
-			if (!Engine_SelfEvent->__Created(self_object))
+			if (!((GameObject*)self_object)->__created)
 			{
 				Engine_SelfEvent->OnCreate(self_object);
 			}
 			// Update
 			Engine_SelfEvent->OnUpdate(self_object);
 			// Destroy
-			if (Engine_SelfEvent->__ToDestroy(self_object))
+			if (((GameObject*)self_object)->__to_destroy)
 			{
 				Engine_SelfEvent->OnDestroy(self_object);
 				
@@ -74,7 +87,7 @@ void GameEngineLoop()
 		i += __ObjectEvent_LoopOnce(&Engine_EnemyEvents);
 		i += __ObjectEvent_LoopOnce(&Engine_BulletEvents);
 		// UI loop
-		for (it = Engine_UIEvents.head; it; it = it->next)
+		for (it = Engine_UIEvents.head->next; it; it = it->next)
 		{
 			j++;
 			// TODO
@@ -105,26 +118,26 @@ unsigned __ObjectEvent_LoopOnce(LinkedList* events)
 	void *game_object;
 
 	// object loop
-	for (it = events->head; it; it = it->next)
+	for (it = events->head->next; it; it = it->next)
 	{
 		event = ((GameEvent*)it->object);
 		game_object = event->game_object;
 
 		// Create
-		if (!event->__Created(game_object))
+		if (!((GameObject*)game_object)->__created)
 		{
 			event->OnCreate(game_object);
 		}
 		// Update
 		event->OnUpdate(game_object);
 		// Destroy
-		if (event->__ToDestroy(game_object))
+		if (((GameObject*)game_object)->__to_destroy)
 		{
 			event->OnDestroy(game_object);
 
 			free(event);
 			it = it->prev;
-			RemoveNode(it->next);
+			RemoveNode(events, it->next);
 		}
 		// Render
 		else

@@ -1,4 +1,5 @@
 #include "Demo1_GameObject_Self.h"
+#include "mygpio.h"
 
 void Demo1_Init(
 	Demo1_GameObject_Self* self,
@@ -25,7 +26,7 @@ void Demo1_Init(
 void Demo1_OnCreate(Demo1_GameObject_Self* self)
 {
 	// 在这里写的脚本会在物体被创建时执行
-
+	printlnf("%s created", self->name);
 	// 之后记得调用一下父类的OnCreate
 	GameObject_Self_OnCreate(&self->base);
 }

@@ -1,7 +1,7 @@
-Src/Scripts/Prefebs/Demo1_GameObject_Self.o: \
- ../Src/Scripts/Prefebs/Demo1_GameObject_Self.c \
- ../Src/Scripts/Prefebs/Demo1_GameObject_Self.h ../Inc/GameObject_Self.h \
- ../Inc/GameObject.h \
+Src/Scripts/Prefebs/RoyalCoin_GameObject_Bullet.o: \
+ ../Src/Scripts/Prefebs/RoyalCoin_GameObject_Bullet.c \
+ ../Src/Scripts/Prefebs/RoyalCoin_GameObject_Bullet.h \
+ ../Inc/GameObject_Bullet.h ../Inc/GameObject.h \
  N:/OneDrive\ -\ Platinum/University/3/CS301_Embedded_System/Project/SUSTech-Embedded_System-Project/Inc/OverAllEnv/lcd.h \
  N:/OneDrive\ -\ Platinum/University/3/CS301_Embedded_System/Project/SUSTech-Embedded_System-Project/Inc/OverAllEnv/main.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h \
@@ -25,11 +25,13 @@ Src/Scripts/Prefebs/Demo1_GameObject_Self.o: \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h \
- ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h ../Inc/mygpio.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
+ N:/OneDrive\ -\ Platinum/University/3/CS301_Embedded_System/Project/SUSTech-Embedded_System-Project/Img/Img_RoyalCoin.h \
+ ../Inc/mygpio.h
 
-../Src/Scripts/Prefebs/Demo1_GameObject_Self.h:
+../Src/Scripts/Prefebs/RoyalCoin_GameObject_Bullet.h:
 
-../Inc/GameObject_Self.h:
+../Inc/GameObject_Bullet.h:
 
 ../Inc/GameObject.h:
 
@@ -80,5 +82,7 @@ N:/OneDrive\ -\ Platinum/University/3/CS301_Embedded_System/Project/SUSTech-Embe
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h:
 
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:
+
+N:/OneDrive\ -\ Platinum/University/3/CS301_Embedded_System/Project/SUSTech-Embedded_System-Project/Img/Img_RoyalCoin.h:
 
 ../Inc/mygpio.h:

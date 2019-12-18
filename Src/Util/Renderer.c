@@ -5,9 +5,9 @@
 #define MAX(a, b) (a>b?a:b)
 #define MIN(a, b) (a<b?a:b)
 
-#define __WIDTH 38
-#define __HEIGHT 48
-#define __SCALE 6
+#define __WIDTH 57
+#define __HEIGHT 72
+#define __SCALE 4
 
 void __PrintScreen(Color** screen)
 {
@@ -35,11 +35,17 @@ void Render(GameObject* game_object, Color** screen)
 	ex = (int)game_object->pos_x + game_object->width / 2;
 	ey = (int)game_object->pos_y + game_object->height / 2;
 
-	rsx = (uint16_t)MAX(sx, 0);
-	rsy = (uint16_t)MAX(sy, 0);
-	rex = (uint16_t)MIN(ex, __WIDTH);
-	rey = (uint16_t)MIN(ey, __HEIGHT);
+	rsx = (uint16_t)MIN(MAX(sx, 0), __WIDTH);
+	rsy = (uint16_t)MIN(MAX(sy, 0), __HEIGHT);
+	rex = (uint16_t)MAX(MIN(ex, __WIDTH), 0);
+	rey = (uint16_t)MAX(MIN(ey, __HEIGHT), 0);
 	
+	if (game_object == 536875992)
+	{
+		printlnf("sx: %d, sy: %d, ex: %d, ey: %d", sx,sy,ex,ey);
+		printlnf("rsx: %hu, rsy: %hu, rex: %hu, rey: %hu",rsx,rsy,rex,rey);
+	}
+
 	for (i = 0; i < rey - rsy; i++)
 		for (j = 0; j < rex - rsx; j++)
 		{

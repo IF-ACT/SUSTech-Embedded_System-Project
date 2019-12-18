@@ -1,4 +1,4 @@
 Renderer.c:12:6:__PrintScreen	24	static
-Renderer.c:26:6:Render	56	static
-Renderer.c:54:9:InitScreen	32	static
-Renderer.c:74:9:Flush	48	static
+Renderer.c:26:6:Render	64	static
+Renderer.c:60:9:InitScreen	32	static
+Renderer.c:80:9:Flush	48	static

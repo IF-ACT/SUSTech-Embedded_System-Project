@@ -2,29 +2,27 @@
 
 Node* Push(LinkedList *linked_list, void *object)
 {
-	if (!linked_list->head)
-	{
-		linked_list->head = malloc(sizeof(Node));
-		linked_list->head->object = object;
-		linked_list->head->prev = NULL;
-		linked_list->tail = linked_list->head;
-		linked_list->tail->next = NULL;
-	}
-	else
-	{
-		Node *temp = linked_list->tail;
-		linked_list->tail->next = malloc(sizeof(Node));
-		linked_list->tail = linked_list->tail->next;
-		linked_list->tail->object = object;
-		linked_list->tail->prev = temp;
-		linked_list->tail->next = NULL;
-	}
+	Node *temp = linked_list->tail;
+	linked_list->tail->next = malloc(sizeof(Node));
+	linked_list->tail = linked_list->tail->next;
+	linked_list->tail->object = object;
+	linked_list->tail->prev = temp;
+	linked_list->tail->next = NULL;
+	
 	return linked_list->tail;
 }
 
-void RemoveNode(Node *node)
+void RemoveNode(LinkedList *linked_list, Node *node)
 {
-	node->next->prev = node->prev;
-	node->prev->next = node->next;
+	if (!node->next)
+	{
+		linked_list->tail = node->prev;
+		node->prev->next = NULL;
+	}
+	else
+	{
+		node->next->prev = node->prev;
+		node->prev->next = node->next;
+	}
 	free(node);
 }

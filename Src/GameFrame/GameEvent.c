@@ -6,9 +6,7 @@ GameEvent* RegistGameEvent
 	void (*OnCreate)(void*),
 	void (*OnUpdate)(void*),
 	void (*OnDestroy)(void*),
-	void (*OnRender)(void*, Color**),
-	bool (*__Created)(void*),
-	bool (*__ToDestroy)(void*)
+	void (*OnRender)(void*, Color**)
 ){
 	GameEvent* ge = malloc(sizeof(GameEvent));
 
@@ -17,8 +15,6 @@ GameEvent* RegistGameEvent
 	ge->OnUpdate = OnUpdate;
 	ge->OnDestroy = OnDestroy;
 	ge->OnRender = OnRender;
-	ge->__Created = __Created;
-	ge->__ToDestroy = __ToDestroy;
 
 	return ge;
 }

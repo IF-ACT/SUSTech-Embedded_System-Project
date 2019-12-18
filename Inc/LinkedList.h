@@ -22,6 +22,6 @@ typedef struct LinkedList
 
 // push *object into linkedlist
 Node* Push(LinkedList *linked_list, void *object);
-void RemoveNode(Node *node);
+void RemoveNode(LinkedList *linked_list, Node *node);
 
 #endif
