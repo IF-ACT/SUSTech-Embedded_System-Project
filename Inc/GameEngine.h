@@ -36,6 +36,4 @@ void GameEngineLoop();
 
 void GameOver();
 
-unsigned __ObjectEvent_LoopOnce(LinkedList* events);
-
 #endif

@@ -4,6 +4,117 @@
 #include "Time.h"
 #include "mygpio.h"
 #include "GameObject.h"
+#include "GameObject_Bullet.h"
+#include "GameObject_Self.h"
+#include "GameObject_Enemy.h"
+
+unsigned __ObjectEvent_LoopOnce(LinkedList* events, bool is_bullet)
+{
+	unsigned i = 0;
+	Node *it, *it_temp;
+	GameEvent *event;
+	void *game_object;
+
+	// object loop
+	for (it = events->head->next; it; it = it->next)
+	{
+		event = ((GameEvent*)it->object);
+		game_object = event->game_object;
+
+		// Create
+		if (!((GameObject*)game_object)->__created)
+		{
+			event->OnCreate(game_object);
+		}
+		// Update
+		event->OnUpdate(game_object);
+		// Bullet crash
+		if (is_bullet)
+		{
+			if (((GameObject_Bullet*)game_object)->is_enemy)
+			{
+				// Emeny bullet crash with self plane
+				if (__Crash((GameObject*)game_object, (GameObject*)Engine_SelfEvent->game_object))
+				{
+					((GameObject*)game_object)->__to_destroy = true;
+					if (
+						((GameObject_Self*)Engine_SelfEvent->game_object)->life >
+						((GameObject_Bullet*)game_object)->damage
+					)
+						((GameObject_Self*)Engine_SelfEvent->game_object)->life -=
+						((GameObject_Bullet*)game_object)->damage;
+					else
+					{
+						((GameObject_Self*)Engine_SelfEvent->game_object)->life = 0;
+					}
+				}	
+			}
+			else
+			{
+				// Self bullet crash with enemy plane
+				for (it_temp = Engine_EnemyEvents.head->next; it_temp; it_temp = it_temp->next)
+				{
+					if (__Crash((GameObject*)game_object, (GameObject*)it_temp->object))
+					{
+						((GameObject*)game_object)->__to_destroy = true;
+						if (
+							((GameObject_Enemy*)it_temp->object)->life >
+							((GameObject_Bullet*)game_object)->damage
+						)
+							((GameObject_Enemy*)it_temp->object)->life -=
+							((GameObject_Bullet*)game_object)->damage;
+						else
+						{
+							((GameObject_Enemy*)it_temp->object)->life = 0;
+						}
+					}
+				}
+			}
+		}
+		// Destroy
+		if (((GameObject*)game_object)->__to_destroy)
+		{
+			event->OnDestroy(game_object);
+
+			free(event);
+			it = it->prev;
+			RemoveNode(events, it->next);
+		}
+		// Render
+		else
+		{
+			event->OnRender(game_object, screen);
+			i++;
+		}
+	}
+	return i;
+}
+
+bool __Crash(GameObject* obj1, GameObject* obj2)
+{
+	if (obj1->pos_x > obj2->pos_x)
+	{
+		if (obj1->pos_x - obj2->pos_x < obj1->collider + obj2->collider)
+			return true;
+	}
+	else
+	{
+		if (obj2->pos_x - obj1->pos_x < obj1->collider + obj2->collider)
+			return true;
+	}
+
+	if (obj1->pos_y > obj2->pos_y)
+	{
+		if (obj1->pos_y - obj2->pos_y < obj1->collider + obj2->collider)
+			return true;
+	}
+	else
+	{
+		if (obj2->pos_y - obj1->pos_y < obj1->collider + obj2->collider)
+			return true;
+	}
+	return false;
+}
 
 void GameEngineInit()
 {
@@ -84,8 +195,8 @@ void GameEngineLoop()
 		}
 
 		// object loops
-		i += __ObjectEvent_LoopOnce(&Engine_EnemyEvents);
-		i += __ObjectEvent_LoopOnce(&Engine_BulletEvents);
+		i += __ObjectEvent_LoopOnce(&Engine_EnemyEvents, false);
+		i += __ObjectEvent_LoopOnce(&Engine_BulletEvents, true);
 		// UI loop
 		for (it = Engine_UIEvents.head->next; it; it = it->next)
 		{
@@ -110,41 +221,6 @@ void GameOver()
 	
 }
 
-unsigned __ObjectEvent_LoopOnce(LinkedList* events)
-{
-	unsigned i = 0;
-	Node *it;
-	GameEvent *event;
-	void *game_object;
 
-	// object loop
-	for (it = events->head->next; it; it = it->next)
-	{
-		event = ((GameEvent*)it->object);
-		game_object = event->game_object;
 
-		// Create
-		if (!((GameObject*)game_object)->__created)
-		{
-			event->OnCreate(game_object);
-		}
-		// Update
-		event->OnUpdate(game_object);
-		// Destroy
-		if (((GameObject*)game_object)->__to_destroy)
-		{
-			event->OnDestroy(game_object);
 
-			free(event);
-			it = it->prev;
-			RemoveNode(events, it->next);
-		}
-		// Render
-		else
-		{
-			event->OnRender(game_object, screen);
-			i++;
-		}
-	}
-	return i;
-}

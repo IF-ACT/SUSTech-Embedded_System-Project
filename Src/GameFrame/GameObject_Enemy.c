@@ -25,6 +25,8 @@ void inline GameObject_Enemy_OnCreate(GameObject_Enemy* self)
 
 void inline GameObject_Enemy_OnUpdate(GameObject_Enemy* self)
 {
+	if (!self->life)
+		self->base.__to_destroy = true;
 	GameObject_OnUpdate(&self->base);
 }
 
