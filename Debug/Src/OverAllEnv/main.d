@@ -26,11 +26,7 @@ Src/OverAllEnv/main.o: ../Src/OverAllEnv/main.c ../Inc/OverAllEnv/gpio.h \
  ../Inc/OverAllEnv/usart.h ../Inc/mygpio.h ../Inc/GameEngine.h \
  ../Inc/LinkedList.h ../Inc/GameEvent.h \
  N:/OneDrive\ -\ Platinum/University/3/CS301_Embedded_System/Project/SUSTech-Embedded_System-Project/Inc/OverAllEnv/lcd.h \
- N:/OneDrive\ -\ Platinum/University/3/CS301_Embedded_System/Project/SUSTech-Embedded_System-Project/Src/Scripts/Routines/Demo4_Routine.h \
- N:/OneDrive\ -\ Platinum/University/3/CS301_Embedded_System/Project/SUSTech-Embedded_System-Project/Src/Scripts/Prefebs/Remo_GameObject_Self.h \
- ../Inc/GameObject_Self.h ../Inc/GameObject.h \
- N:/OneDrive\ -\ Platinum/University/3/CS301_Embedded_System/Project/SUSTech-Embedded_System-Project/Src/Scripts/Prefebs/Demo2_GameObject_Enemy.h \
- ../Inc/GameObject_Enemy.h ../Inc/GameEvent.h
+ N:/OneDrive\ -\ Platinum/University/3/CS301_Embedded_System/Project/SUSTech-Embedded_System-Project/Src/Scripts/Routines/Demo4_Routine.h
 
 ../Inc/OverAllEnv/gpio.h:
 
@@ -97,15 +93,3 @@ N:/OneDrive\ -\ Platinum/University/3/CS301_Embedded_System/Project/SUSTech-Embe
 N:/OneDrive\ -\ Platinum/University/3/CS301_Embedded_System/Project/SUSTech-Embedded_System-Project/Inc/OverAllEnv/lcd.h:
 
 N:/OneDrive\ -\ Platinum/University/3/CS301_Embedded_System/Project/SUSTech-Embedded_System-Project/Src/Scripts/Routines/Demo4_Routine.h:
-
-N:/OneDrive\ -\ Platinum/University/3/CS301_Embedded_System/Project/SUSTech-Embedded_System-Project/Src/Scripts/Prefebs/Remo_GameObject_Self.h:
-
-../Inc/GameObject_Self.h:
-
-../Inc/GameObject.h:
-
-N:/OneDrive\ -\ Platinum/University/3/CS301_Embedded_System/Project/SUSTech-Embedded_System-Project/Src/Scripts/Prefebs/Demo2_GameObject_Enemy.h:
-
-../Inc/GameObject_Enemy.h:
-
-../Inc/GameEvent.h:

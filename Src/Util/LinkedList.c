@@ -16,8 +16,8 @@ void RemoveNode(LinkedList *linked_list, Node *node)
 {
 	if (!node->next)
 	{
-		linked_list->tail = node->prev;
 		node->prev->next = NULL;
+		linked_list->tail = node->prev;
 	}
 	else
 	{

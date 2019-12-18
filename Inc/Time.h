@@ -2,9 +2,9 @@
 #define __TIME_H
 
 // 上一帧耗时
-float delta_time;
+int delta_time;
 
-float GetTime();
+int GetTime();
 
 void Time_OnStart();
 void Time_OnUpdate();

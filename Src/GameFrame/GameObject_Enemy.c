@@ -34,14 +34,3 @@ void inline GameObject_Enemy_OnRender(GameObject_Enemy* self, Color** screen)
 {
 	GameObject_OnRender(&self->base, screen);
 }
-
-bool inline __GameObject_Enemy_Created(GameObject_Enemy* self)
-{
-	return __GameObject_Created(&self->base);
-}
-
-bool inline __GameObject_Enemy_ToDestroy(GameObject_Enemy* self)
-{
-	return __GameObject_ToDestroy(&self->base);
-}
-

@@ -8,6 +8,38 @@
 #include "GameObject_Self.h"
 #include "GameObject_Enemy.h"
 
+bool __Crash(GameObject* obj1, GameObject* obj2)
+{
+	float cdis = (float)(obj1->collider + obj2->collider);
+
+	bool flag_1 = false;
+	bool flag_2 = false;
+
+	if (obj1->pos_x > obj2->pos_x)
+	{
+		if (obj1->pos_x - obj2->pos_x < cdis)
+			flag_1 = true;
+	}
+	else
+	{
+		if (obj2->pos_x - obj1->pos_x < cdis)
+			flag_1 = true;
+	}
+
+	if (obj1->pos_y > obj2->pos_y)
+	{
+		if (obj1->pos_y - obj2->pos_y < cdis)
+			flag_2 = true;
+	}
+	else
+	{
+		if (obj2->pos_y - obj1->pos_y < cdis)
+			flag_2 = true;
+	}
+
+	return flag_1 && flag_2;
+}
+
 unsigned __ObjectEvent_LoopOnce(LinkedList* events, bool is_bullet)
 {
 	unsigned i = 0;
@@ -54,18 +86,18 @@ unsigned __ObjectEvent_LoopOnce(LinkedList* events, bool is_bullet)
 				// Self bullet crash with enemy plane
 				for (it_temp = Engine_EnemyEvents.head->next; it_temp; it_temp = it_temp->next)
 				{
-					if (__Crash((GameObject*)game_object, (GameObject*)it_temp->object))
+					if (__Crash((GameObject*)game_object, (GameObject*)((GameEvent*)it_temp->object)->game_object))
 					{
 						((GameObject*)game_object)->__to_destroy = true;
 						if (
-							((GameObject_Enemy*)it_temp->object)->life >
+							((GameObject_Enemy*)((GameEvent*)it_temp->object)->game_object)->life >
 							((GameObject_Bullet*)game_object)->damage
 						)
-							((GameObject_Enemy*)it_temp->object)->life -=
+							((GameObject_Enemy*)((GameEvent*)it_temp->object)->game_object)->life -=
 							((GameObject_Bullet*)game_object)->damage;
 						else
 						{
-							((GameObject_Enemy*)it_temp->object)->life = 0;
+							((GameObject_Enemy*)((GameEvent*)it_temp->object)->game_object)->life = 0;
 						}
 					}
 				}
@@ -88,32 +120,6 @@ unsigned __ObjectEvent_LoopOnce(LinkedList* events, bool is_bullet)
 		}
 	}
 	return i;
-}
-
-bool __Crash(GameObject* obj1, GameObject* obj2)
-{
-	if (obj1->pos_x > obj2->pos_x)
-	{
-		if (obj1->pos_x - obj2->pos_x < obj1->collider + obj2->collider)
-			return true;
-	}
-	else
-	{
-		if (obj2->pos_x - obj1->pos_x < obj1->collider + obj2->collider)
-			return true;
-	}
-
-	if (obj1->pos_y > obj2->pos_y)
-	{
-		if (obj1->pos_y - obj2->pos_y < obj1->collider + obj2->collider)
-			return true;
-	}
-	else
-	{
-		if (obj2->pos_y - obj1->pos_y < obj1->collider + obj2->collider)
-			return true;
-	}
-	return false;
 }
 
 void GameEngineInit()
@@ -140,7 +146,7 @@ void GameEngineInit()
 	Engine_UIEvents.tail = Engine_UIEvents.head;
 }
 
-void GameEngineLoop()
+void GameEngineLoop(void (*OnLoop)(void))
 {
 	Node *it;
 	void *self_object;
@@ -154,6 +160,9 @@ void GameEngineLoop()
 		i = 0; j = 0;
 		screen = InitScreen(screen);
 		Time_OnUpdate();
+
+		// Event on loop
+		OnLoop();
 		
 		// freshing self plane
 		if (Engine_SelfEvent)
@@ -192,6 +201,7 @@ void GameEngineLoop()
 		else
 		{
 			GameOver();
+			break;
 		}
 
 		// object loops
@@ -205,11 +215,15 @@ void GameEngineLoop()
 		}
 		
 		// Reset
-		Engine_KeyPressed = 0;
+		if (!GetTime()%8)
+			Engine_KeyPressed = 0;
 		// Flush
 		screen = Flush(screen);
 
-		printlnf("%u gameobject and %u UI freshed", i, j);
+		if (Game_ChapterPassed)
+			break;
+
+		printlnf("Time: %d, %u gameobject and %u UI freshed", GetTime(), i, j);
 	}
 
 	Game_ChapterNum++;

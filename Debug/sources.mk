@@ -21,6 +21,7 @@ Src \
 Src/GameFrame \
 Src/OverAllEnv \
 Src/Scripts/Prefebs \
+Src/Scripts/Routines \
 Src/Util \
 Startup \
 

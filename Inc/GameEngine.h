@@ -32,7 +32,7 @@ int Engine_KeyPressed;
 
 void GameEngineInit();
 
-void GameEngineLoop();
+void GameEngineLoop(void (*OnLoop)(void));
 
 void GameOver();
 

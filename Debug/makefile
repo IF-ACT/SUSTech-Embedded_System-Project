@@ -10,6 +10,7 @@ RM := rm -rf
 -include sources.mk
 -include Startup/subdir.mk
 -include Src/Util/subdir.mk
+-include Src/Scripts/Routines/subdir.mk
 -include Src/Scripts/Prefebs/subdir.mk
 -include Src/OverAllEnv/subdir.mk
 -include Src/GameFrame/subdir.mk

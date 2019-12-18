@@ -1,6 +1,4 @@
 GameObject_Enemy.c:3:6:GameObject_Enemy_Init	48	static
 GameObject_Enemy.c:21:13:GameObject_Enemy_OnCreate	16	static
 GameObject_Enemy.c:26:13:GameObject_Enemy_OnUpdate	16	static
-GameObject_Enemy.c:31:13:GameObject_Enemy_OnRender	16	static
-GameObject_Enemy.c:36:13:__GameObject_Enemy_Created	16	static
-GameObject_Enemy.c:41:13:__GameObject_Enemy_ToDestroy	16	static
+GameObject_Enemy.c:33:13:GameObject_Enemy_OnRender	16	static

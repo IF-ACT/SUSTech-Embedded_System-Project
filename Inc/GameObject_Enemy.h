@@ -24,7 +24,4 @@ void GameObject_Enemy_OnUpdate(GameObject_Enemy* self);
 void GameObject_Enemy_OnDestroy(GameObject_Enemy* self);
 void GameObject_Enemy_OnRender(GameObject_Enemy* self, Color** screen);
 
-bool __GameObject_Enemy_Created(GameObject_Enemy* self);
-bool __GameObject_Enemy_ToDestroy(GameObject_Enemy* self);
-
 #endif
