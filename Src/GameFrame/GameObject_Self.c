@@ -3,6 +3,7 @@
 #include "Time.h"
 #include "mygpio.h"
 #include "GameEngine.h"
+#include "Renderer.h"
 
 void GameObject_Self_Init(
 	GameObject_Self* self,
@@ -35,7 +36,13 @@ void inline GameObject_Self_OnUpdate(GameObject_Self* self)
 		self->base.speed_x = 0.7f;
 	else
 		self->base.speed_x = 0.0f;
-	GameObject_OnUpdate(&self->base);
+
+	self->base.pos_x += self->base.speed_x * delta_time;
+	
+	if (self->base.pos_x < 0)
+		self->base.pos_x = 0;
+	else if (self->base.pos_x >= __WIDTH)
+		self->base.pos_x = __WIDTH - 1;
 }
 
 void inline GameObject_Self_OnRender(GameObject_Self* self, Color** screen)

@@ -25,7 +25,7 @@ Src/GameFrame/GameObject_Self.o: ../Src/GameFrame/GameObject_Self.c \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h ../Inc/Time.h \
  ../Inc/mygpio.h ../Inc/GameEngine.h ../Inc/LinkedList.h \
- ../Inc/GameEvent.h
+ ../Inc/GameEvent.h ../Inc/Renderer.h
 
 ../Inc/GameObject_Self.h:
 
@@ -88,3 +88,5 @@ N:/OneDrive\ -\ Platinum/University/3/CS301_Embedded_System/Project/SUSTech-Embe
 ../Inc/LinkedList.h:
 
 ../Inc/GameEvent.h:
+
+../Inc/Renderer.h:

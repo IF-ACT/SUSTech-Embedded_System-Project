@@ -1,6 +1,6 @@
-GameObject_Self.c:7:6:GameObject_Self_Init	48	static
-GameObject_Self.c:25:13:GameObject_Self_OnCreate	16	static
-GameObject_Self.c:30:13:GameObject_Self_OnUpdate	16	static
-GameObject_Self.c:41:13:GameObject_Self_OnRender	16	static
-GameObject_Self.c:46:13:__GameObject_Self_Created	16	static
-GameObject_Self.c:51:13:__GameObject_Self_ToDestroy	16	static
+GameObject_Self.c:8:6:GameObject_Self_Init	48	static
+GameObject_Self.c:26:13:GameObject_Self_OnCreate	16	static
+GameObject_Self.c:31:13:GameObject_Self_OnUpdate	24	static
+GameObject_Self.c:48:13:GameObject_Self_OnRender	16	static
+GameObject_Self.c:53:13:__GameObject_Self_Created	16	static
+GameObject_Self.c:58:13:__GameObject_Self_ToDestroy	16	static

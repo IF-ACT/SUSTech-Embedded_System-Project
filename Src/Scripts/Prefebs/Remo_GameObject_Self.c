@@ -6,11 +6,10 @@
 #include "Renderer.h"
 #include "RoyalCoin_GameObject_Bullet.h"
 #include "mygpio.h"
+#include "Time.h"
 
 void Remo_Init(
-	// 指向自身的指针
 	Remo_GameObject_Self* self,
-	// 初始横纵坐标
 	uint16_t pos_x, uint16_t pos_y
 ){
 	GameObject_Self_Init(
@@ -34,30 +33,90 @@ void Remo_OnUpdate(Remo_GameObject_Self* self)
 	RoyalCoin_GameObject_Bullet* bullet;
 	GameEvent* e;
 
-	if (Game_KillCount > 20 && self->fire_rank <= 5)
+	if (Game_KillCount > 20 && self->fire_rank <= 4)
 	{
 		self->fire_rank++;
 		Game_KillCount -= 20;
 	}
 	// fire
-	switch (self->fire_rank)
+	if (GetTime()%2)
 	{
-	case 1:
-		bullet = malloc(sizeof(RoyalCoin_GameObject_Bullet));
-		RoyalCoin_Init(bullet, self->base.base.pos_x, self->base.base.pos_y, 0.0f, -3.5f);
-		e = RegistGameEvent(
-			bullet,
-			RoyalCoin_OnCreate, RoyalCoin_OnUpdate,
-			RoyalCoin_OnDestroy, RoyalCoin_OnRender
-		);
-		Push(&Engine_BulletEvents, e);
-		break;
-	
-	default:
-		break;
-	}
-	bullet = NULL;
-	e = NULL;
+		if (self->fire_rank == 1 || self->fire_rank == 4) // basic
+		{
+			bullet = malloc(sizeof(RoyalCoin_GameObject_Bullet));
+			RoyalCoin_Init(bullet, self->base.base.pos_x, self->base.base.pos_y, 0.0f, -3.5f);
+			e = RegistGameEvent(
+				bullet,
+				RoyalCoin_OnCreate, RoyalCoin_OnUpdate,
+				RoyalCoin_OnDestroy, RoyalCoin_OnRender
+			);
+			Push(&Engine_BulletEvents, e);
+		}
+		if (self->fire_rank >= 2) // Double bullets
+		{
+			bullet = malloc(sizeof(RoyalCoin_GameObject_Bullet));
+			RoyalCoin_Init(bullet, self->base.base.pos_x - 1, self->base.base.pos_y, 0.0f, -3.5f);
+			e = RegistGameEvent(
+				bullet,
+				RoyalCoin_OnCreate, RoyalCoin_OnUpdate,
+				RoyalCoin_OnDestroy, RoyalCoin_OnRender
+			);
+			Push(&Engine_BulletEvents, e);
+
+			bullet = malloc(sizeof(RoyalCoin_GameObject_Bullet));
+			RoyalCoin_Init(bullet, self->base.base.pos_x + 1, self->base.base.pos_y, 0.0f, -3.5f);
+			e = RegistGameEvent(
+				bullet,
+				RoyalCoin_OnCreate, RoyalCoin_OnUpdate,
+				RoyalCoin_OnDestroy, RoyalCoin_OnRender
+			);
+			Push(&Engine_BulletEvents, e);
+
+			if (self->fire_rank >= 3) // Side bullets
+			{
+				bullet = malloc(sizeof(RoyalCoin_GameObject_Bullet));
+				RoyalCoin_Init(bullet, self->base.base.pos_x - 1, self->base.base.pos_y, -1.0f, -3.0f);
+				e = RegistGameEvent(
+					bullet,
+					RoyalCoin_OnCreate, RoyalCoin_OnUpdate,
+					RoyalCoin_OnDestroy, RoyalCoin_OnRender
+				);
+				Push(&Engine_BulletEvents, e);
+
+				bullet = malloc(sizeof(RoyalCoin_GameObject_Bullet));
+				RoyalCoin_Init(bullet, self->base.base.pos_x + 1, self->base.base.pos_y, 1.0f, -3.0f);
+				e = RegistGameEvent(
+					bullet,
+					RoyalCoin_OnCreate, RoyalCoin_OnUpdate,
+					RoyalCoin_OnDestroy, RoyalCoin_OnRender
+				);
+				Push(&Engine_BulletEvents, e);
+			}
+
+			if (self->fire_rank == 4) // Full side
+			{
+				bullet = malloc(sizeof(RoyalCoin_GameObject_Bullet));
+				RoyalCoin_Init(bullet, self->base.base.pos_x - 2, self->base.base.pos_y, -1.2f, -2.8f);
+				e = RegistGameEvent(
+					bullet,
+					RoyalCoin_OnCreate, RoyalCoin_OnUpdate,
+					RoyalCoin_OnDestroy, RoyalCoin_OnRender
+				);
+				Push(&Engine_BulletEvents, e);
+
+				bullet = malloc(sizeof(RoyalCoin_GameObject_Bullet));
+				RoyalCoin_Init(bullet, self->base.base.pos_x + 2, self->base.base.pos_y, 1.2f, -2.8f);
+				e = RegistGameEvent(
+					bullet,
+					RoyalCoin_OnCreate, RoyalCoin_OnUpdate,
+					RoyalCoin_OnDestroy, RoyalCoin_OnRender
+				);
+				Push(&Engine_BulletEvents, e);
+			}
+		}
+	}	
+
+
 	GameObject_Self_OnUpdate(&self->base);
 }
 

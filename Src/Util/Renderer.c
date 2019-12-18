@@ -5,10 +5,6 @@
 #define MAX(a, b) (a>b?a:b)
 #define MIN(a, b) (a<b?a:b)
 
-#define __WIDTH 57
-#define __HEIGHT 72
-#define __SCALE 4
-
 void __PrintScreen(Color** screen)
 {
 	int i, j;
@@ -100,14 +96,11 @@ Color** Flush(Color **screen)
 				ex = sx + __SCALE;
 				ey = sy + __SCALE;
 				LCD_Fill(sx, sy, ex, ey, screen[i][j]);
-				printlnf("flushing %hu, %hu", j, i);
 			}
 		}
 	// cache
 	temp = __last_screen;
 	__last_screen = screen;
-	
-	println("Flushed");
 	
 	return temp;
 }

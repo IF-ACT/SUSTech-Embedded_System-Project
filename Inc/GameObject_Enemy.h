@@ -21,7 +21,6 @@ void GameObject_Enemy_Init(
 
 void GameObject_Enemy_OnCreate(GameObject_Enemy* self);
 void GameObject_Enemy_OnUpdate(GameObject_Enemy* self);
-void GameObject_Enemy_OnDestroy(GameObject_Enemy* self);
 void GameObject_Enemy_OnRender(GameObject_Enemy* self, Color** screen);
 
 #endif

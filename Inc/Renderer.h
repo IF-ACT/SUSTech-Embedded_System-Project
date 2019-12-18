@@ -6,6 +6,10 @@
 
 #define TRANSPARENT 0x0000
 
+#define __WIDTH 57
+#define __HEIGHT 72
+#define __SCALE 4
+
 void Render(GameObject* game_object, Color **screen);
 
 Color** InitScreen(Color** screen);

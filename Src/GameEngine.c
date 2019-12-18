@@ -95,9 +95,10 @@ unsigned __ObjectEvent_LoopOnce(LinkedList* events, bool is_bullet)
 						)
 							((GameObject_Enemy*)((GameEvent*)it_temp->object)->game_object)->life -=
 							((GameObject_Bullet*)game_object)->damage;
-						else
+						else if (((GameObject_Enemy*)((GameEvent*)it_temp->object)->game_object)->life)
 						{
 							((GameObject_Enemy*)((GameEvent*)it_temp->object)->game_object)->life = 0;
+							Game_KillCount++;
 						}
 					}
 				}

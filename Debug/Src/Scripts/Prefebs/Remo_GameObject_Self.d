@@ -30,7 +30,7 @@ Src/Scripts/Prefebs/Remo_GameObject_Self.o: \
  ../Inc/GameEvent.h ../Inc/GameEngine.h ../Inc/LinkedList.h \
  ../Inc/GameEvent.h ../Inc/Renderer.h \
  ../Src/Scripts/Prefebs/RoyalCoin_GameObject_Bullet.h \
- ../Inc/GameObject_Bullet.h ../Inc/mygpio.h
+ ../Inc/GameObject_Bullet.h ../Inc/mygpio.h ../Inc/Time.h
 
 ../Src/Scripts/Prefebs/Remo_GameObject_Self.h:
 
@@ -103,3 +103,5 @@ N:/OneDrive\ -\ Platinum/University/3/CS301_Embedded_System/Project/SUSTech-Embe
 ../Inc/GameObject_Bullet.h:
 
 ../Inc/mygpio.h:
+
+../Inc/Time.h:
