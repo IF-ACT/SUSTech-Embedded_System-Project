@@ -1,2 +1,2 @@
-Demo4_Routine.c:12:6:Demo4_OnLoop_1	40	static
-Demo4_Routine.c:62:6:Demo4_Routine	24	static
+Demo4_Routine.c:17:6:Demo4_OnLoop_1	32	static
+Demo4_Routine.c:79:6:Demo4_Routine	24	static

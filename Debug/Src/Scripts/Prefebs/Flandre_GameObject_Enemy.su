@@ -1,2 +1,10 @@
-Flandre_GameObject_Enemy.c:163:27:Flandre_Init	32	static
-Flandre_GameObject_Enemy.c:176:6:Flandre_OnCreate	16	static
+Flandre_GameObject_Enemy.c:17:6:__Flandre_Normal	72	static
+Flandre_GameObject_Enemy.c:36:6:__Flandre_Leavatain	72	static
+Flandre_GameObject_Enemy.c:107:6:__Flandre_KagomeKagome	64	static
+Flandre_GameObject_Enemy.c:154:6:__Flandre_StarbowBreak	16	static
+Flandre_GameObject_Enemy.c:159:6:__Flandre_Catadioptric	48	static
+Flandre_GameObject_Enemy.c:177:27:Flandre_Init	32	static
+Flandre_GameObject_Enemy.c:191:6:Flandre_OnCreate	16	static
+Flandre_GameObject_Enemy.c:196:6:Flandre_OnUpdate	16	static
+Flandre_GameObject_Enemy.c:252:6:Flandre_OnDestroy	16	static
+Flandre_GameObject_Enemy.c:257:6:Flandre_OnRender	16	static

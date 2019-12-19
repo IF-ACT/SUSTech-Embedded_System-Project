@@ -30,6 +30,7 @@ Src/Scripts/Routines/Demo4_Routine.o: \
  N:/OneDrive\ -\ Platinum/University/3/CS301_Embedded_System/Project/SUSTech-Embedded_System-Project/Src/Scripts/Prefebs/Demo2_GameObject_Enemy.h \
  ../Inc/GameObject_Enemy.h \
  N:/OneDrive\ -\ Platinum/University/3/CS301_Embedded_System/Project/SUSTech-Embedded_System-Project/Src/Scripts/Prefebs/Goast_GameObject_Enemy.h \
+ N:/OneDrive\ -\ Platinum/University/3/CS301_Embedded_System/Project/SUSTech-Embedded_System-Project/Src/Scripts/Prefebs/Flandre_GameObject_Enemy.h \
  ../Inc/GameEvent.h ../Inc/GameEngine.h ../Inc/LinkedList.h \
  ../Inc/GameEvent.h ../Inc/Time.h ../Inc/mygpio.h
 
@@ -94,6 +95,8 @@ N:/OneDrive\ -\ Platinum/University/3/CS301_Embedded_System/Project/SUSTech-Embe
 ../Inc/GameObject_Enemy.h:
 
 N:/OneDrive\ -\ Platinum/University/3/CS301_Embedded_System/Project/SUSTech-Embedded_System-Project/Src/Scripts/Prefebs/Goast_GameObject_Enemy.h:
+
+N:/OneDrive\ -\ Platinum/University/3/CS301_Embedded_System/Project/SUSTech-Embedded_System-Project/Src/Scripts/Prefebs/Flandre_GameObject_Enemy.h:
 
 ../Inc/GameEvent.h:
 

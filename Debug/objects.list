@@ -29,6 +29,7 @@
 "Src/OverAllEnv/system_stm32f1xx.o"
 "Src/OverAllEnv/usart.o"
 "Src/Scripts/Prefebs/BasicBullet_GameObject_Bullet.o"
+"Src/Scripts/Prefebs/Catadioptric_GameObject_Bullet.o"
 "Src/Scripts/Prefebs/Demo1_GameObject_Self.o"
 "Src/Scripts/Prefebs/Demo2_GameObject_Enemy.o"
 "Src/Scripts/Prefebs/Demo3_GameObject_Bullet.o"

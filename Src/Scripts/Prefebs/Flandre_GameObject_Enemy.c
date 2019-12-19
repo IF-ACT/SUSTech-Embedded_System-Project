@@ -14,7 +14,7 @@
 #define Flandre_MAX_LIFE 80000
 #define RAND_MAX 1000
 
-void inline __Flandre_Normal(Flandre_GameObject_Enemy* self)
+void __Flandre_Normal(Flandre_GameObject_Enemy* self)
 {
 	if (!(GetTime()%4))
 	{
@@ -33,7 +33,7 @@ void inline __Flandre_Normal(Flandre_GameObject_Enemy* self)
 	}
 }
 
-void inline __Flandre_Leavatain(Flandre_GameObject_Enemy* self)
+void __Flandre_Leavatain(Flandre_GameObject_Enemy* self)
 {
 	BasicBullet_GameObject_Bullet* bullet;
 	GameEvent* e;
@@ -104,7 +104,7 @@ void inline __Flandre_Leavatain(Flandre_GameObject_Enemy* self)
 	}
 }
 
-void inline __Flandre_KagomeKagome(Flandre_GameObject_Enemy* self)
+void __Flandre_KagomeKagome(Flandre_GameObject_Enemy* self)
 {
 	uint16_t i;
 	uint16_t i_max;
@@ -151,12 +151,12 @@ void inline __Flandre_KagomeKagome(Flandre_GameObject_Enemy* self)
 	self->skill_param += 8;
 }
 
-void inline __Flandre_StarbowBreak(Flandre_GameObject_Enemy* self)
+void __Flandre_StarbowBreak(Flandre_GameObject_Enemy* self)
 {
 	
 }
 
-void inline __Flandre_Catadioptric(Flandre_GameObject_Enemy* self)
+void __Flandre_Catadioptric(Flandre_GameObject_Enemy* self)
 {
 	if (!(GetTime()%2))
 	{
@@ -189,6 +189,11 @@ Flandre_GameObject_Enemy* Flandre_Init()
 }
 
 void Flandre_OnCreate(Flandre_GameObject_Enemy* self)
+{
+	GameObject_Enemy_OnCreate(&self->base);
+}
+
+void Flandre_OnUpdate(Flandre_GameObject_Enemy* self)
 {
 	if (self->base.life > 60000)
 	{
@@ -244,6 +249,12 @@ void Flandre_OnCreate(Flandre_GameObject_Enemy* self)
 	GameObject_Enemy_OnUpdate(&self->base);
 }
 
-void Flandre_OnUpdate(Flandre_GameObject_Enemy* self);
-void Flandre_OnDestroy(Flandre_GameObject_Enemy* self);
-void Flandre_OnRender(Flandre_GameObject_Enemy* self, Color** screen);
+void Flandre_OnDestroy(Flandre_GameObject_Enemy* self)
+{
+	free(self);
+}
+
+void Flandre_OnRender(Flandre_GameObject_Enemy* self, Color** screen)
+{
+	GameObject_Enemy_OnRender(&self->base, screen);
+}

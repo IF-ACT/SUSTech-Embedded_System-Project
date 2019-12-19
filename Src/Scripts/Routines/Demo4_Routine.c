@@ -33,7 +33,8 @@ void Demo4_OnLoop_1()
 		);
 		Push(&Engine_EnemyEvents, event);
 	}
-	/*if (GetTime() == 200)
+	
+	if (GetTime() == 200)
 	{
 		GameEvent* event;
 		Flandre_GameObject_Enemy* flandre = Flandre_Init();
@@ -43,7 +44,7 @@ void Demo4_OnLoop_1()
 			Flandre_OnDestroy, Flandre_OnRender
 		);
 		Push(&Engine_EnemyEvents, event);
-	}*/
+	}
 	
 	/*if (GetTime() == 200)
 	{

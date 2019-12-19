@@ -1,0 +1,5 @@
+Catadioptric_GameObject_Bullet.c:10:33:Catadioptric_Init	64	static
+Catadioptric_GameObject_Bullet.c:22:6:Catadioptric_OnCreate	16	static
+Catadioptric_GameObject_Bullet.c:27:6:Catadioptric_OnUpdate	16	static
+Catadioptric_GameObject_Bullet.c:37:6:Catadioptric_OnDestroy	16	static
+Catadioptric_GameObject_Bullet.c:42:6:Catadioptric_OnRender	16	static

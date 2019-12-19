@@ -11,7 +11,7 @@ BasicBullet_GameObject_Bullet* BasicBullet_Init(
 ){
 	BasicBullet_GameObject_Bullet* self = malloc(sizeof(BasicBullet_GameObject_Bullet));
 	GameObject_Bullet_Init(
-		self, ttl, damage, pos_x, pos_y, speed_x, speed_y,
+		&self->base, ttl, damage, pos_x, pos_y, speed_x, speed_y,
 		collider, width, height, img, is_enemy
 	);
 	return self;
