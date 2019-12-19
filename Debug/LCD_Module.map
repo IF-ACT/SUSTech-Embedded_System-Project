@@ -3494,16 +3494,18 @@ Discarded input sections
                 0x0000000000000000       0x20 Src/Scripts/Prefebs/Flandre_GameObject_Enemy.o
  .data.Img_Leavatain_R
                 0x0000000000000000       0x20 Src/Scripts/Prefebs/Flandre_GameObject_Enemy.o
+ .data.Img_KagomeKagome
+                0x0000000000000000       0x12 Src/Scripts/Prefebs/Flandre_GameObject_Enemy.o
  .text.Flandre_Init
                 0x0000000000000000       0x54 Src/Scripts/Prefebs/Flandre_GameObject_Enemy.o
  .text.Flandre_OnCreate
                 0x0000000000000000       0x6c Src/Scripts/Prefebs/Flandre_GameObject_Enemy.o
- .debug_info    0x0000000000000000      0xdc6 Src/Scripts/Prefebs/Flandre_GameObject_Enemy.o
+ .debug_info    0x0000000000000000      0xe0b Src/Scripts/Prefebs/Flandre_GameObject_Enemy.o
  .debug_abbrev  0x0000000000000000      0x1de Src/Scripts/Prefebs/Flandre_GameObject_Enemy.o
  .debug_aranges
                 0x0000000000000000       0x28 Src/Scripts/Prefebs/Flandre_GameObject_Enemy.o
  .debug_ranges  0x0000000000000000       0x18 Src/Scripts/Prefebs/Flandre_GameObject_Enemy.o
- .debug_macro   0x0000000000000000      0x2e6 Src/Scripts/Prefebs/Flandre_GameObject_Enemy.o
+ .debug_macro   0x0000000000000000      0x2f0 Src/Scripts/Prefebs/Flandre_GameObject_Enemy.o
  .debug_macro   0x0000000000000000      0xa5a Src/Scripts/Prefebs/Flandre_GameObject_Enemy.o
  .debug_macro   0x0000000000000000       0x22 Src/Scripts/Prefebs/Flandre_GameObject_Enemy.o
  .debug_macro   0x0000000000000000       0x18 Src/Scripts/Prefebs/Flandre_GameObject_Enemy.o
@@ -3556,8 +3558,8 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x52 Src/Scripts/Prefebs/Flandre_GameObject_Enemy.o
  .debug_macro   0x0000000000000000      0x1dc Src/Scripts/Prefebs/Flandre_GameObject_Enemy.o
  .debug_macro   0x0000000000000000       0x22 Src/Scripts/Prefebs/Flandre_GameObject_Enemy.o
- .debug_line    0x0000000000000000      0x97e Src/Scripts/Prefebs/Flandre_GameObject_Enemy.o
- .debug_str     0x0000000000000000    0x76601 Src/Scripts/Prefebs/Flandre_GameObject_Enemy.o
+ .debug_line    0x0000000000000000      0x994 Src/Scripts/Prefebs/Flandre_GameObject_Enemy.o
+ .debug_str     0x0000000000000000    0x76632 Src/Scripts/Prefebs/Flandre_GameObject_Enemy.o
  .comment       0x0000000000000000       0x7c Src/Scripts/Prefebs/Flandre_GameObject_Enemy.o
  .debug_frame   0x0000000000000000       0x58 Src/Scripts/Prefebs/Flandre_GameObject_Enemy.o
  .ARM.attributes
@@ -3885,6 +3887,135 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0xb5 Src/Scripts/Prefebs/RoyalCoin_GameObject_Bullet.o
  .debug_macro   0x0000000000000000       0x52 Src/Scripts/Prefebs/RoyalCoin_GameObject_Bullet.o
  .debug_macro   0x0000000000000000      0x1dc Src/Scripts/Prefebs/RoyalCoin_GameObject_Bullet.o
+ .group         0x0000000000000000        0xc Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .group         0x0000000000000000        0xc Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .group         0x0000000000000000        0xc Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .group         0x0000000000000000        0xc Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .group         0x0000000000000000        0xc Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .group         0x0000000000000000        0xc Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .group         0x0000000000000000        0xc Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .group         0x0000000000000000        0xc Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .group         0x0000000000000000        0xc Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .group         0x0000000000000000        0xc Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .group         0x0000000000000000        0xc Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .group         0x0000000000000000        0xc Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .group         0x0000000000000000        0xc Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .group         0x0000000000000000        0xc Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .group         0x0000000000000000        0xc Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .group         0x0000000000000000        0xc Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .group         0x0000000000000000        0xc Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .group         0x0000000000000000        0xc Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .group         0x0000000000000000        0xc Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .group         0x0000000000000000        0xc Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .group         0x0000000000000000        0xc Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .group         0x0000000000000000        0xc Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .group         0x0000000000000000        0xc Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .group         0x0000000000000000        0xc Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .group         0x0000000000000000        0xc Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .group         0x0000000000000000        0xc Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .group         0x0000000000000000        0xc Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .group         0x0000000000000000        0xc Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .group         0x0000000000000000        0xc Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .group         0x0000000000000000        0xc Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .group         0x0000000000000000        0xc Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .group         0x0000000000000000        0xc Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .group         0x0000000000000000        0xc Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .group         0x0000000000000000        0xc Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .group         0x0000000000000000        0xc Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .group         0x0000000000000000        0xc Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .group         0x0000000000000000        0xc Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .group         0x0000000000000000        0xc Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .group         0x0000000000000000        0xc Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .group         0x0000000000000000        0xc Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .group         0x0000000000000000        0xc Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .group         0x0000000000000000        0xc Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .group         0x0000000000000000        0xc Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .group         0x0000000000000000        0xc Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .group         0x0000000000000000        0xc Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .group         0x0000000000000000        0xc Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .group         0x0000000000000000        0xc Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .group         0x0000000000000000        0xc Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .group         0x0000000000000000        0xc Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .group         0x0000000000000000        0xc Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .group         0x0000000000000000        0xc Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .text          0x0000000000000000        0x0 Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .data          0x0000000000000000        0x0 Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .bss           0x0000000000000000        0x0 Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .data.Img_StarbowBreak
+                0x0000000000000000        0x8 Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .text.StarbowBreak_Init
+                0x0000000000000000       0x60 Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .text.StarbowBreak_OnCreate
+                0x0000000000000000       0x18 Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .text.StarbowBreak_OnUpdate
+                0x0000000000000000       0x22 Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .text.StarbowBreak_OnDestroy
+                0x0000000000000000       0x16 Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .text.StarbowBreak_OnRender
+                0x0000000000000000       0x1c Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .debug_info    0x0000000000000000      0xc84 Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .debug_abbrev  0x0000000000000000      0x1e0 Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .debug_aranges
+                0x0000000000000000       0x40 Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .debug_ranges  0x0000000000000000       0x30 Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .debug_macro   0x0000000000000000      0x283 Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .debug_macro   0x0000000000000000      0xa5a Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .debug_macro   0x0000000000000000       0x22 Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .debug_macro   0x0000000000000000       0x18 Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .debug_macro   0x0000000000000000       0x22 Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .debug_macro   0x0000000000000000       0x40 Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .debug_macro   0x0000000000000000       0x94 Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .debug_macro   0x0000000000000000       0x3c Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .debug_macro   0x0000000000000000       0x34 Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .debug_macro   0x0000000000000000       0x16 Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .debug_macro   0x0000000000000000      0x10e Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .debug_macro   0x0000000000000000       0x8d Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .debug_macro   0x0000000000000000       0x57 Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .debug_macro   0x0000000000000000       0x52 Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .debug_macro   0x0000000000000000       0x1f Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .debug_macro   0x0000000000000000       0x43 Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .debug_macro   0x0000000000000000       0x20 Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .debug_macro   0x0000000000000000      0x1a3 Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .debug_macro   0x0000000000000000      0x330 Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .debug_macro   0x0000000000000000       0x16 Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .debug_macro   0x0000000000000000       0x29 Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .debug_macro   0x0000000000000000      0x215 Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .debug_macro   0x0000000000000000       0x2e Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .debug_macro   0x0000000000000000       0x22 Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .debug_macro   0x0000000000000000       0xef Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .debug_macro   0x0000000000000000       0x6a Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .debug_macro   0x0000000000000000      0x1df Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .debug_macro   0x0000000000000000       0x1c Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .debug_macro   0x0000000000000000       0x22 Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .debug_macro   0x0000000000000000       0xbd Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .debug_macro   0x0000000000000000      0xd23 Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .debug_macro   0x0000000000000000     0xfd8c Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .debug_macro   0x0000000000000000       0x43 Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .debug_macro   0x0000000000000000       0x54 Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .debug_macro   0x0000000000000000      0x5be Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .debug_macro   0x0000000000000000      0x4d5 Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .debug_macro   0x0000000000000000      0x1cb Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .debug_macro   0x0000000000000000      0x114 Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .debug_macro   0x0000000000000000      0x1ea Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .debug_macro   0x0000000000000000       0x27 Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .debug_macro   0x0000000000000000      0x144 Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .debug_macro   0x0000000000000000      0x1bc Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .debug_macro   0x0000000000000000       0x30 Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .debug_macro   0x0000000000000000       0x3c Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .debug_macro   0x0000000000000000       0x57 Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .debug_macro   0x0000000000000000       0x88 Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .debug_macro   0x0000000000000000      0x24f Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .debug_macro   0x0000000000000000      0x141 Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .debug_macro   0x0000000000000000      0x26b Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .debug_macro   0x0000000000000000       0xb5 Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .debug_macro   0x0000000000000000       0x52 Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .debug_macro   0x0000000000000000      0x1dc Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .debug_line    0x0000000000000000      0x8a4 Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .debug_str     0x0000000000000000    0x7642a Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .comment       0x0000000000000000       0x7c Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .debug_frame   0x0000000000000000       0xc4 Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
+ .ARM.attributes
+                0x0000000000000000       0x33 Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
  .group         0x0000000000000000        0xc Src/Scripts/Routines/Demo4_Routine.o
  .group         0x0000000000000000        0xc Src/Scripts/Routines/Demo4_Routine.o
  .group         0x0000000000000000        0xc Src/Scripts/Routines/Demo4_Routine.o
@@ -4374,6 +4505,7 @@ LOAD Src/Scripts/Prefebs/Flandre_GameObject_Enemy.o
 LOAD Src/Scripts/Prefebs/Goast_GameObject_Enemy.o
 LOAD Src/Scripts/Prefebs/Remo_GameObject_Self.o
 LOAD Src/Scripts/Prefebs/RoyalCoin_GameObject_Bullet.o
+LOAD Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o
 LOAD Src/Scripts/Routines/Demo4_Routine.o
 LOAD Src/Util/LinkedList.o
 LOAD Src/Util/Renderer.o

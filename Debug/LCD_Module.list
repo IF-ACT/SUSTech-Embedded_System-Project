@@ -6406,11 +6406,11 @@ void MX_GPIO_Init(void)
   GPIO_InitStruct.Pin = KEY_WK_Pin;
  8002dfa:	2301      	movs	r3, #1
  8002dfc:	613b      	str	r3, [r7, #16]
-  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
  8002dfe:	4b31      	ldr	r3, [pc, #196]	; (8002ec4 <MX_GPIO_Init+0x13c>)
  8002e00:	617b      	str	r3, [r7, #20]
-  GPIO_InitStruct.Pull = GPIO_PULLDOWN;
- 8002e02:	2302      	movs	r3, #2
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+ 8002e02:	2301      	movs	r3, #1
  8002e04:	61bb      	str	r3, [r7, #24]
   HAL_GPIO_Init(KEY_WK_GPIO_Port, &GPIO_InitStruct);
  8002e06:	f107 0310 	add.w	r3, r7, #16
@@ -6422,7 +6422,7 @@ void MX_GPIO_Init(void)
   GPIO_InitStruct.Pin = KEY0_Pin;
  8002e12:	2320      	movs	r3, #32
  8002e14:	613b      	str	r3, [r7, #16]
-  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
  8002e16:	4b2b      	ldr	r3, [pc, #172]	; (8002ec4 <MX_GPIO_Init+0x13c>)
  8002e18:	617b      	str	r3, [r7, #20]
   GPIO_InitStruct.Pull = GPIO_PULLUP;
@@ -6457,7 +6457,7 @@ void MX_GPIO_Init(void)
   GPIO_InitStruct.Pin = KEY1_Pin;
  8002e48:	f44f 4300 	mov.w	r3, #32768	; 0x8000
  8002e4c:	613b      	str	r3, [r7, #16]
-  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
  8002e4e:	4b1d      	ldr	r3, [pc, #116]	; (8002ec4 <MX_GPIO_Init+0x13c>)
  8002e50:	617b      	str	r3, [r7, #20]
   GPIO_InitStruct.Pull = GPIO_PULLUP;
@@ -6525,7 +6525,7 @@ void MX_GPIO_Init(void)
  8002eb8:	40021000 	.word	0x40021000
  8002ebc:	40010800 	.word	0x40010800
  8002ec0:	40011400 	.word	0x40011400
- 8002ec4:	10110000 	.word	0x10110000
+ 8002ec4:	10210000 	.word	0x10210000
  8002ec8:	40011000 	.word	0x40011000
 
 08002ecc <LCD_WR_REG>:

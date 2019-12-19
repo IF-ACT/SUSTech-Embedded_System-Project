@@ -36,6 +36,7 @@
 "Src/Scripts/Prefebs/Goast_GameObject_Enemy.o"
 "Src/Scripts/Prefebs/Remo_GameObject_Self.o"
 "Src/Scripts/Prefebs/RoyalCoin_GameObject_Bullet.o"
+"Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o"
 "Src/Scripts/Routines/Demo4_Routine.o"
 "Src/Util/LinkedList.o"
 "Src/Util/Renderer.o"

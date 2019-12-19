@@ -1,0 +1,5 @@
+StarbowBreak_GameObject_Bullet.c:8:33:StarbowBreak_Init	64	static
+StarbowBreak_GameObject_Bullet.c:22:6:StarbowBreak_OnCreate	16	static
+StarbowBreak_GameObject_Bullet.c:27:6:StarbowBreak_OnUpdate	16	static
+StarbowBreak_GameObject_Bullet.c:33:6:StarbowBreak_OnDestroy	16	static
+StarbowBreak_GameObject_Bullet.c:38:6:StarbowBreak_OnRender	16	static
