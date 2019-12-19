@@ -8,6 +8,11 @@
 #include "GameObject_Self.h"
 #include "GameObject_Enemy.h"
 
+#include "lcd.h"
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
 bool __Crash(GameObject* obj1, GameObject* obj2)
 {
 	float cdis = (float)(obj1->collider + obj2->collider);
@@ -233,7 +238,19 @@ void GameEngineLoop(void (*OnLoop)(void))
 
 void GameOver()
 {
-	
+	LCD_Clear(GRAY);
+	BACK_COLOR = GRAY;
+	//LCD_DrawRectangle(30, 40, 230, 64);
+	//LCD_Color_Fill(30, 40, 230, 64,WHITE);
+	LCD_ShowString(30, 80, 200, 24, 24, (uint8_t*) "Game Over ^_^");
+
+	LCD_Color_Fill(20, 110, 220, 112,BLACK);
+
+	char str[] = "Score :";
+	char score[10];
+	itoa(Game_Score, score, 10);
+	strcat(str,score);
+	LCD_ShowString(30, 130, 140, 24, 14, (uint8_t*) str);
 }
 
 
