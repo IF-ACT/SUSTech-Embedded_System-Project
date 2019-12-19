@@ -4,10 +4,15 @@
 #include "Remo_GameObject_Self.h"
 #include "Demo2_GameObject_Enemy.h"
 #include "Goast_GameObject_Enemy.h"
+#include "Flandre_GameObject_Enemy.h"
 #include "GameEvent.h"
 #include "GameEngine.h"
 #include "Time.h"
 #include "mygpio.h"
+
+#include "lcd.h"
+#include <stdio.h>
+#include <string.h>
 
 void Demo4_OnLoop_1()
 {
@@ -28,8 +33,19 @@ void Demo4_OnLoop_1()
 		);
 		Push(&Engine_EnemyEvents, event);
 	}
+	/*if (GetTime() == 200)
+	{
+		GameEvent* event;
+		Flandre_GameObject_Enemy* flandre = Flandre_Init();
+		event = RegistGameEvent(
+			flandre,
+			Flandre_OnCreate, Flandre_OnUpdate,
+			Flandre_OnDestroy, Flandre_OnRender
+		);
+		Push(&Engine_EnemyEvents, event);
+	}*/
 	
-	if (GetTime() == 200)
+	/*if (GetTime() == 200)
 	{
 		GameEvent* event;
 		Demo2_GameObject_Enemy* enemy = malloc(sizeof(Demo2_GameObject_Enemy));
@@ -56,7 +72,7 @@ void Demo4_OnLoop_1()
 			Goast_OnDestroy, Goast_OnRender
 		);
 		Push(&Engine_EnemyEvents, event);
-	}
+	}*/
 }
 
 void Demo4_Routine(){
@@ -73,4 +89,14 @@ void Demo4_Routine(){
 	Engine_SelfEvent = event;
 
 	GameEngineLoop(Demo4_OnLoop_1);
+
+	LCD_Clear(GRAY);
+	BACK_COLOR = GRAY;
+	//LCD_DrawRectangle(30, 40, 230, 64);
+	//LCD_Color_Fill(30, 40, 230, 64,WHITE);
+	LCD_ShowString(30, 80, 200, 24, 24, (uint8_t*) "Congratulations ^_^");
+
+	LCD_Color_Fill(20, 110, 220, 112,BLACK);
+
+	LCD_ShowString(80, 130, 140, 24, 14, (uint8_t*) "You Win!");
 }
