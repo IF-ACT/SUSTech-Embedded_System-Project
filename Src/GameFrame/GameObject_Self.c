@@ -43,6 +43,9 @@ void inline GameObject_Self_OnUpdate(GameObject_Self* self)
 		self->base.pos_x = 0;
 	else if (self->base.pos_x >= __WIDTH)
 		self->base.pos_x = __WIDTH - 1;
+
+	if (!self->life)
+		self->base.__to_destroy = true;
 }
 
 void inline GameObject_Self_OnRender(GameObject_Self* self, Color** screen)

@@ -38,8 +38,8 @@ void Goast_OnUpdate(Goast_GameObject_Enemy* self)
 		
 		BasicBullet_GameObject_Bullet* bullet = BasicBullet_Init(
 			35, 10, self->base.base.pos_x, self->base.base.pos_y,
-			(gx - self->base.base.pos_x) * 0.1f,
-			(gy - self->base.base.pos_y) * 0.1f,
+			(gx - self->base.base.pos_x) * 0.05f,
+			(gy - self->base.base.pos_y) * 0.05f,
 			1, 2, 2, Goast_Img_Bullet, true
 		);
 		GameEvent* e = RegistGameEvent(
@@ -51,14 +51,14 @@ void Goast_OnUpdate(Goast_GameObject_Enemy* self)
 
 	if (!self->move_dir)
 	{
-		self->base.base.speed_x = - ((GetTime() - self->create_time)%5) * 0.2f;
+		self->base.base.speed_x = - ((GetTime() - self->create_time)%10) * 0.2f;
 		self->base.base.speed_y = ((GetTime() - self->create_time) % 3) * 0.2f;
 		if (self->base.base.pos_x < 0)
 			self->move_dir = 1;
 	}
 	else
 	{
-		self->base.base.speed_x = ((GetTime() - self->create_time) % 5) * 0.2f;
+		self->base.base.speed_x = ((GetTime() - self->create_time) % 10) * 0.2f;
 		self->base.base.speed_y = - ((GetTime() - self->create_time)%3) * 0.2f;
 		if (self->base.base.pos_x >= __WIDTH)
 			self->move_dir = 0;
