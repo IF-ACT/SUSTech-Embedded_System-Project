@@ -39,7 +39,7 @@ void Remo_OnUpdate(Remo_GameObject_Self* self)
 		Game_KillCount -= 20;
 	}
 	// fire
-	if (GetTime()%2)
+	if (!(GetTime()%2))
 	{
 		if (self->fire_rank == 1 || self->fire_rank == 4) // basic
 		{

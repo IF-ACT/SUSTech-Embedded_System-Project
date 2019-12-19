@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include "Remo_GameObject_Self.h"
 #include "Demo2_GameObject_Enemy.h"
+#include "Goast_GameObject_Enemy.h"
 #include "GameEvent.h"
 #include "GameEngine.h"
 #include "Time.h"
@@ -42,6 +43,17 @@ void Demo4_OnLoop_1()
 			enemy,
 			Demo2_OnCreate, Demo2_OnUpdate,
 			Demo2_OnDestroy, Demo2_OnRender
+		);
+		Push(&Engine_EnemyEvents, event);
+	}
+
+	if (GetTime() > 200 && !(GetTime()%15))
+	{
+		Goast_GameObject_Enemy* goast = Goast_Init(40, 10, 0);
+		GameEvent* event = RegistGameEvent(
+			goast,
+			Goast_OnCreate, Goast_OnUpdate,
+			Goast_OnDestroy, Goast_OnRender
 		);
 		Push(&Engine_EnemyEvents, event);
 	}

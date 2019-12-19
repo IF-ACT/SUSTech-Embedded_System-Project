@@ -55,13 +55,3 @@ void Demo1_OnRender(Demo1_GameObject_Self* self, Color** screen)
 	// 直接调用就好，没有特殊需求不用修改
 	GameObject_Self_OnRender(&self->base, screen);
 }
-
-bool __Demo1_Created(Demo1_GameObject_Self* self)
-{
-	return __GameObject_Self_Created(&self->base);
-}
-
-bool __Demo1_ToDestroy(Demo1_GameObject_Self* self)
-{
-	return __GameObject_Self_ToDestroy(&self->base);
-}

@@ -1,0 +1,5 @@
+Goast_GameObject_Enemy.c:16:25:Goast_Init	40	static
+Goast_GameObject_Enemy.c:27:6:Goast_OnCreate	16	static
+Goast_GameObject_Enemy.c:32:6:Goast_OnUpdate	80	static
+Goast_GameObject_Enemy.c:70:6:Goast_OnDestroy	16	static
+Goast_GameObject_Enemy.c:75:6:Goast_OnRender	16	static

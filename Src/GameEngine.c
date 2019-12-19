@@ -216,7 +216,7 @@ void GameEngineLoop(void (*OnLoop)(void))
 		}
 		
 		// Reset
-		if (!GetTime()%8)
+		if (!(GetTime()%8))
 			Engine_KeyPressed = 0;
 		// Flush
 		screen = Flush(screen);

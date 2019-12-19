@@ -1,0 +1,5 @@
+BasicBullet_GameObject_Bullet.c:3:32:BasicBullet_Init	64	static
+BasicBullet_GameObject_Bullet.c:20:6:BasicBullet_OnCreate	16	static
+BasicBullet_GameObject_Bullet.c:25:6:BasicBullet_OnUpdate	16	static
+BasicBullet_GameObject_Bullet.c:30:6:BasicBullet_OnDestroy	16	static
+BasicBullet_GameObject_Bullet.c:35:6:BasicBullet_OnRender	16	static
