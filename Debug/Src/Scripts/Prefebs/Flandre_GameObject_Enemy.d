@@ -32,7 +32,8 @@ Src/Scripts/Prefebs/Flandre_GameObject_Enemy.o: \
  ../Inc/GameObject_Bullet.h \
  N:/OneDrive\ -\ Platinum/University/3/CS301_Embedded_System/Project/SUSTech-Embedded_System-Project/Img/Img_Flandre.h \
  N:/OneDrive\ -\ Platinum/University/3/CS301_Embedded_System/Project/SUSTech-Embedded_System-Project/Img/Img_Leavatain.h \
- N:/OneDrive\ -\ Platinum/University/3/CS301_Embedded_System/Project/SUSTech-Embedded_System-Project/Img/Img_KagomeKagome.h
+ N:/OneDrive\ -\ Platinum/University/3/CS301_Embedded_System/Project/SUSTech-Embedded_System-Project/Img/Img_KagomeKagome.h \
+ N:/OneDrive\ -\ Platinum/University/3/CS301_Embedded_System/Project/SUSTech-Embedded_System-Project/Img/Img_BigBullet.h
 
 ../Src/Scripts/Prefebs/Flandre_GameObject_Enemy.h:
 
@@ -109,3 +110,5 @@ N:/OneDrive\ -\ Platinum/University/3/CS301_Embedded_System/Project/SUSTech-Embe
 N:/OneDrive\ -\ Platinum/University/3/CS301_Embedded_System/Project/SUSTech-Embedded_System-Project/Img/Img_Leavatain.h:
 
 N:/OneDrive\ -\ Platinum/University/3/CS301_Embedded_System/Project/SUSTech-Embedded_System-Project/Img/Img_KagomeKagome.h:
+
+N:/OneDrive\ -\ Platinum/University/3/CS301_Embedded_System/Project/SUSTech-Embedded_System-Project/Img/Img_BigBullet.h:

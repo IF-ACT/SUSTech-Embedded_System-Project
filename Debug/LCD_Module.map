@@ -2815,7 +2815,7 @@ Discarded input sections
  .text._link    0x0000000000000000       0x20 Src/OverAllEnv/syscalls.o
  .text._fork    0x0000000000000000       0x16 Src/OverAllEnv/syscalls.o
  .text._execve  0x0000000000000000       0x22 Src/OverAllEnv/syscalls.o
- .debug_info    0x0000000000000000      0xea4 Src/OverAllEnv/syscalls.o
+ .debug_info    0x0000000000000000      0xe9d Src/OverAllEnv/syscalls.o
  .debug_abbrev  0x0000000000000000      0x261 Src/OverAllEnv/syscalls.o
  .debug_aranges
                 0x0000000000000000       0xa8 Src/OverAllEnv/syscalls.o
@@ -2862,7 +2862,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x16 Src/OverAllEnv/syscalls.o
  .debug_macro   0x0000000000000000       0x88 Src/OverAllEnv/syscalls.o
  .debug_line    0x0000000000000000      0x765 Src/OverAllEnv/syscalls.o
- .debug_str     0x0000000000000000     0x87b6 Src/OverAllEnv/syscalls.o
+ .debug_str     0x0000000000000000     0x87b0 Src/OverAllEnv/syscalls.o
  .comment       0x0000000000000000       0x7c Src/OverAllEnv/syscalls.o
  .debug_frame   0x0000000000000000      0x2ac Src/OverAllEnv/syscalls.o
  .ARM.attributes
@@ -3496,16 +3496,18 @@ Discarded input sections
                 0x0000000000000000       0x20 Src/Scripts/Prefebs/Flandre_GameObject_Enemy.o
  .data.Img_KagomeKagome
                 0x0000000000000000       0x12 Src/Scripts/Prefebs/Flandre_GameObject_Enemy.o
+ .bss.Img_BigBullet
+                0x0000000000000000       0x80 Src/Scripts/Prefebs/Flandre_GameObject_Enemy.o
  .text.Flandre_Init
                 0x0000000000000000       0x54 Src/Scripts/Prefebs/Flandre_GameObject_Enemy.o
  .text.Flandre_OnCreate
                 0x0000000000000000       0x6c Src/Scripts/Prefebs/Flandre_GameObject_Enemy.o
- .debug_info    0x0000000000000000      0xe0b Src/Scripts/Prefebs/Flandre_GameObject_Enemy.o
+ .debug_info    0x0000000000000000      0xe1c Src/Scripts/Prefebs/Flandre_GameObject_Enemy.o
  .debug_abbrev  0x0000000000000000      0x1de Src/Scripts/Prefebs/Flandre_GameObject_Enemy.o
  .debug_aranges
                 0x0000000000000000       0x28 Src/Scripts/Prefebs/Flandre_GameObject_Enemy.o
  .debug_ranges  0x0000000000000000       0x18 Src/Scripts/Prefebs/Flandre_GameObject_Enemy.o
- .debug_macro   0x0000000000000000      0x2f0 Src/Scripts/Prefebs/Flandre_GameObject_Enemy.o
+ .debug_macro   0x0000000000000000      0x300 Src/Scripts/Prefebs/Flandre_GameObject_Enemy.o
  .debug_macro   0x0000000000000000      0xa5a Src/Scripts/Prefebs/Flandre_GameObject_Enemy.o
  .debug_macro   0x0000000000000000       0x22 Src/Scripts/Prefebs/Flandre_GameObject_Enemy.o
  .debug_macro   0x0000000000000000       0x18 Src/Scripts/Prefebs/Flandre_GameObject_Enemy.o
@@ -3558,8 +3560,8 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x52 Src/Scripts/Prefebs/Flandre_GameObject_Enemy.o
  .debug_macro   0x0000000000000000      0x1dc Src/Scripts/Prefebs/Flandre_GameObject_Enemy.o
  .debug_macro   0x0000000000000000       0x22 Src/Scripts/Prefebs/Flandre_GameObject_Enemy.o
- .debug_line    0x0000000000000000      0x994 Src/Scripts/Prefebs/Flandre_GameObject_Enemy.o
- .debug_str     0x0000000000000000    0x76632 Src/Scripts/Prefebs/Flandre_GameObject_Enemy.o
+ .debug_line    0x0000000000000000      0x9a7 Src/Scripts/Prefebs/Flandre_GameObject_Enemy.o
+ .debug_str     0x0000000000000000    0x76661 Src/Scripts/Prefebs/Flandre_GameObject_Enemy.o
  .comment       0x0000000000000000       0x7c Src/Scripts/Prefebs/Flandre_GameObject_Enemy.o
  .debug_frame   0x0000000000000000       0x58 Src/Scripts/Prefebs/Flandre_GameObject_Enemy.o
  .ARM.attributes

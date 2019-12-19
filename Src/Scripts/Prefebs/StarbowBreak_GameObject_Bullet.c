@@ -12,7 +12,7 @@ StarbowBreak_GameObject_Bullet* StarbowBreak_Init(
 ){
 	StarbowBreak_GameObject_Bullet* self = malloc(sizeof(StarbowBreak_GameObject_Bullet));
 	GameObject_Bullet_Init(
-		self, 20, 5, pos_x, pos_y, speed_x, speed_y,
+		&self->base, 20, 5, pos_x, pos_y, speed_x, speed_y,
 		1, 2, 2, Img_StarbowBreak, true
 	);
 	self->active = active;

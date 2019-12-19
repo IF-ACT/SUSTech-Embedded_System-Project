@@ -5,15 +5,32 @@
 #include "GameEngine.h"
 #include "GameEvent.h"
 #include "BasicBullet_GameObject_Bullet.h"
+#include "Catadioptric_GameObject_Bullet.h"
 #include "Img_Flandre.h"
 #include "Img_Leavatain.h"
 #include "Img_KagomeKagome.h"
+#include "Img_BigBullet.h"
 
 #define Flandre_MAX_LIFE 80000
+#define RAND_MAX 1000
 
 void inline __Flandre_Normal(Flandre_GameObject_Enemy* self)
 {
-	
+	if (!(GetTime()%4))
+	{
+		BasicBullet_GameObject_Bullet* bullet;
+		GameEvent* e;
+		bullet = BasicBullet_Init(
+			30, 12, self->base.base.pos_x, self->base.base.pos_x,
+			rand()/2500.0f - 0.2f, rand()/2500.0f - 0.2f,
+			4, 8, 8, Img_BigBullet, true
+		);
+		e = RegistGameEvent(
+			bullet, BasicBullet_OnCreate, BasicBullet_OnUpdate,
+			BasicBullet_OnDestroy, BasicBullet_OnRender
+		);
+		Push(&Engine_BulletEvents, e);
+	}
 }
 
 void inline __Flandre_Leavatain(Flandre_GameObject_Enemy* self)
@@ -141,24 +158,67 @@ void inline __Flandre_StarbowBreak(Flandre_GameObject_Enemy* self)
 
 void inline __Flandre_Catadioptric(Flandre_GameObject_Enemy* self)
 {
-
+	if (!(GetTime()%2))
+	{
+		Catadioptric_GameObject_Bullet* bullet;
+		GameEvent* e;
+		bullet = Catadioptric_Init(
+			self->base.base.pos_x, self->base.base.pos_x,
+			rand()/1000.0f - 0.5f, rand()/1000.0f - 0.5f
+		);
+		e = RegistGameEvent(
+			bullet, Catadioptric_OnCreate, Catadioptric_OnUpdate,
+			Catadioptric_OnDestroy, Catadioptric_OnRender
+		);
+		Push(&Engine_BulletEvents, e);
+	}
 }
 
 Flandre_GameObject_Enemy* Flandre_Init()
 {
 	Flandre_GameObject_Enemy* self = malloc(sizeof(Flandre_GameObject_Enemy));
 	GameObject_Enemy_Init(
-		self, Flandre_MAX_LIFE,
+		&self->base, Flandre_MAX_LIFE,
 		__WIDTH/2, 15,
 		4, 8, 8, Img_Flandre
 	);
 	self->create_time = GetTime();
 	self->skill_param = 0;
 	self->skill = 0;
+	return self;
 }
 
 void Flandre_OnCreate(Flandre_GameObject_Enemy* self)
 {
+	if (self->base.life > 60000)
+	{
+		self->skill = 0;
+	}
+	else if (self->base.life > 40000)
+	{
+		if (self->skill != 1)
+		{
+			self->skill = 1;
+			self->skill_param = 0;
+		}
+	}
+	else if (self->base.life > 20000)
+	{
+		if (self->skill != 2)
+		{
+			self->skill = 2;
+			self->skill_param = 0;
+		}
+	}
+	else
+	{
+		if (self->skill != 4)
+		{
+			self->skill = 4;
+			self->skill_param = 0;
+		}
+	}
+	
 	switch (self->skill)
 	{
 	case 0:
@@ -169,6 +229,7 @@ void Flandre_OnCreate(Flandre_GameObject_Enemy* self)
 		__Flandre_Leavatain(self);
 		break;
 	case 2:
+		__Flandre_Normal(self);
 		__Flandre_KagomeKagome(self);
 		break;
 	case 3:

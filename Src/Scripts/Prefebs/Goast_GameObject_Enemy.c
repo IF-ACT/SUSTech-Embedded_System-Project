@@ -18,7 +18,7 @@ Goast_GameObject_Enemy* Goast_Init(
 	bool move_dir
 ){
 	Goast_GameObject_Enemy* self = malloc(sizeof(Goast_GameObject_Enemy));
-	GameObject_Enemy_Init(self, 1, pos_x, pos_y, 2, 4, 4, Img_Goast);
+	GameObject_Enemy_Init(&self->base, 1, pos_x, pos_y, 2, 4, 4, Img_Goast);
 	self->create_time = GetTime();
 	self->move_dir = move_dir;
 	return self;
