@@ -6,6 +6,8 @@
 #include "GameEvent.h"
 #include "lcd.h"
 
+#define SELF_LIFE_MAX 100
+
 // Global screen
 Color **screen;
 

@@ -1,5 +1,5 @@
 Remo_GameObject_Self.c:11:6:Remo_Init	32	static
 Remo_GameObject_Self.c:26:6:Remo_OnCreate	16	static
 Remo_GameObject_Self.c:31:6:Remo_OnUpdate	40	static
-Remo_GameObject_Self.c:123:6:Remo_OnDestroy	16	static
-Remo_GameObject_Self.c:135:6:Remo_OnRender	16	static
+Remo_GameObject_Self.c:125:6:Remo_OnDestroy	16	static
+Remo_GameObject_Self.c:137:6:Remo_OnRender	16	static

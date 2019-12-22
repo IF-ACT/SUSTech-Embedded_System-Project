@@ -1,5 +1,5 @@
-Demo2_GameObject_Enemy.c:12:6:Demo2_Init	40	static
-Demo2_GameObject_Enemy.c:28:6:Demo2_OnCreate	16	static
-Demo2_GameObject_Enemy.c:34:6:Demo2_OnUpdate	16	static
-Demo2_GameObject_Enemy.c:39:6:Demo2_OnDestroy	16	static
-Demo2_GameObject_Enemy.c:44:6:Demo2_OnRender	16	static
+Demo2_GameObject_Enemy.c:15:6:Demo2_Init	40	static
+Demo2_GameObject_Enemy.c:31:6:Demo2_OnCreate	16	static
+Demo2_GameObject_Enemy.c:37:6:Demo2_OnUpdate	64	static
+Demo2_GameObject_Enemy.c:51:6:Demo2_OnDestroy	16	static
+Demo2_GameObject_Enemy.c:56:6:Demo2_OnRender	16	static

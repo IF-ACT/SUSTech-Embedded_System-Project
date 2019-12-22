@@ -1,8 +1,4 @@
-Src/Scripts/Prefebs/Demo2_GameObject_Enemy.o: \
- ../Src/Scripts/Prefebs/Demo2_GameObject_Enemy.c \
- ../Src/Scripts/Prefebs/Demo2_GameObject_Enemy.h \
- ../Inc/GameObject_Enemy.h ../Inc/GameObject.h \
- N:/OneDrive\ -\ Platinum/University/3/CS301_Embedded_System/Project/SUSTech-Embedded_System-Project/Inc/OverAllEnv/lcd.h \
+Src/Util/Random.o: ../Src/Util/Random.c ../Inc/Random.h \
  N:/OneDrive\ -\ Platinum/University/3/CS301_Embedded_System/Project/SUSTech-Embedded_System-Project/Inc/OverAllEnv/main.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h \
  N:/OneDrive\ -\ Platinum/University/3/CS301_Embedded_System/Project/SUSTech-Embedded_System-Project/Inc/OverAllEnv/stm32f1xx_hal_conf.h \
@@ -25,18 +21,9 @@ Src/Scripts/Prefebs/Demo2_GameObject_Enemy.o: \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h \
- ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h ../Inc/mygpio.h \
- ../Inc/Time.h ../Src/Scripts/Prefebs/BasicBullet_GameObject_Bullet.h \
- ../Inc/GameObject_Bullet.h ../Inc/GameEngine.h ../Inc/LinkedList.h \
- ../Inc/GameEvent.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 
-../Src/Scripts/Prefebs/Demo2_GameObject_Enemy.h:
-
-../Inc/GameObject_Enemy.h:
-
-../Inc/GameObject.h:
-
-N:/OneDrive\ -\ Platinum/University/3/CS301_Embedded_System/Project/SUSTech-Embedded_System-Project/Inc/OverAllEnv/lcd.h:
+../Inc/Random.h:
 
 N:/OneDrive\ -\ Platinum/University/3/CS301_Embedded_System/Project/SUSTech-Embedded_System-Project/Inc/OverAllEnv/main.h:
 
@@ -83,17 +70,3 @@ N:/OneDrive\ -\ Platinum/University/3/CS301_Embedded_System/Project/SUSTech-Embe
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h:
 
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:
-
-../Inc/mygpio.h:
-
-../Inc/Time.h:
-
-../Src/Scripts/Prefebs/BasicBullet_GameObject_Bullet.h:
-
-../Inc/GameObject_Bullet.h:
-
-../Inc/GameEngine.h:
-
-../Inc/LinkedList.h:
-
-../Inc/GameEvent.h:

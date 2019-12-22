@@ -28,7 +28,7 @@ void Catadioptric_OnUpdate(Catadioptric_GameObject_Bullet* self)
 {
 	if (self->base.base.pos_x < 0 || self->base.base.pos_x > __WIDTH - 1)
 		self->base.base.speed_x = - self->base.base.speed_x;
-	if (self->base.base.pos_y < 0 || self->base.base.pos_y > __WIDTH - 1)
+	if (self->base.base.pos_y < 0 || self->base.base.pos_y > __HEIGHT - 1)
 		self->base.base.speed_y = - self->base.base.speed_y;
 
 	GameObject_Bullet_OnUpdate(&self->base);

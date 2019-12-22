@@ -10,7 +10,7 @@ void RoyalCoin_Init(
 ){
 	GameObject_Bullet_Init(
 		&self->base,
-		20, 10,
+		22, 10, // damage
 		pos_x, pos_y,
 		speed_x, speed_y,
 		1,

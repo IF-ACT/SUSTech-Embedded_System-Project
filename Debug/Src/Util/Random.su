@@ -1,0 +1,2 @@
+Random.c:9:6:os_srand	16	static
+Random.c:14:10:os_rand	4	static

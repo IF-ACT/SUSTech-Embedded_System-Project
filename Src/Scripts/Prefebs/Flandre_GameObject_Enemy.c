@@ -11,18 +11,20 @@
 #include "Img_KagomeKagome.h"
 #include "Img_BigBullet.h"
 
-#define Flandre_MAX_LIFE 80000
-#define RAND_MAX 1000
+#include "mygpio.h"
+#include "Random.h"
+
+#define Flandre_MAX_LIFE 40000
 
 void __Flandre_Normal(Flandre_GameObject_Enemy* self)
 {
-	if (!(GetTime()%4))
+	if (!(GetTime()%8))
 	{
 		BasicBullet_GameObject_Bullet* bullet;
 		GameEvent* e;
 		bullet = BasicBullet_Init(
-			30, 12, self->base.base.pos_x, self->base.base.pos_x,
-			rand()/2500.0f - 0.2f, rand()/2500.0f - 0.2f,
+			100, 12, self->base.base.pos_x, self->base.base.pos_x,
+			((float)os_rand())/__UINT32_MAX__*2 - 0.5f, ((float)os_rand())/__UINT32_MAX__*2 - 0.5f,
 			4, 8, 8, Img_BigBullet, true
 		);
 		e = RegistGameEvent(
@@ -49,6 +51,10 @@ void __Flandre_Leavatain(Flandre_GameObject_Enemy* self)
 			self->skill_param = 1;
 			self->aim = __WIDTH/2 + __WIDTH/4;
 		}
+		else
+		{
+			__Flandre_Normal(self);
+		}
 	}
 	// Leavatain ->
 	else if (self->skill_param == 1)
@@ -65,7 +71,7 @@ void __Flandre_Leavatain(Flandre_GameObject_Enemy* self)
 			Push(&Engine_BulletEvents, e);
 		}
 
-		self->base.base.speed_x = 0.25f;
+		self->base.base.speed_x = 0.75f;
 
 		if (self->base.base.pos_x >= self->aim)
 			self->skill_param = 2;
@@ -81,6 +87,11 @@ void __Flandre_Leavatain(Flandre_GameObject_Enemy* self)
 			self->skill_param = 3;
 			self->aim = __WIDTH/4;
 		}
+		else
+		{
+			__Flandre_Normal(self);
+		}
+		
 	}
 	// Leavatain <-
 	else if (self->skill_param == 3)
@@ -97,7 +108,7 @@ void __Flandre_Leavatain(Flandre_GameObject_Enemy* self)
 			Push(&Engine_BulletEvents, e);
 		}
 
-		self->base.base.speed_x = -0.25f;
+		self->base.base.speed_x = -0.75f;
 
 		if (self->base.base.pos_x <= self->aim)
 			self->skill_param = 0;
@@ -132,9 +143,9 @@ void __Flandre_KagomeKagome(Flandre_GameObject_Enemy* self)
 		i_max = __WIDTH - 1;
 	}
 	
-	for (; i <= i_max; i++)
+	for (; i <= i_max; i += 1)
 	{
-		if (!(i%16 + self->aim) || !((self->skill_param - i)%16))
+		if (!(i%19))
 		{
 			bullet = BasicBullet_Init(
 				10, 10, i, self->skill_param - i,
@@ -148,7 +159,7 @@ void __Flandre_KagomeKagome(Flandre_GameObject_Enemy* self)
 		}
 	}
 
-	self->skill_param += 8;
+	self->skill_param += 4;
 }
 
 void __Flandre_StarbowBreak(Flandre_GameObject_Enemy* self)
@@ -158,20 +169,17 @@ void __Flandre_StarbowBreak(Flandre_GameObject_Enemy* self)
 
 void __Flandre_Catadioptric(Flandre_GameObject_Enemy* self)
 {
-	if (!(GetTime()%2))
-	{
-		Catadioptric_GameObject_Bullet* bullet;
-		GameEvent* e;
-		bullet = Catadioptric_Init(
-			self->base.base.pos_x, self->base.base.pos_x,
-			rand()/1000.0f - 0.5f, rand()/1000.0f - 0.5f
-		);
-		e = RegistGameEvent(
-			bullet, Catadioptric_OnCreate, Catadioptric_OnUpdate,
-			Catadioptric_OnDestroy, Catadioptric_OnRender
-		);
-		Push(&Engine_BulletEvents, e);
-	}
+	Catadioptric_GameObject_Bullet* bullet;
+	GameEvent* e;
+	bullet = Catadioptric_Init(
+		self->base.base.pos_x, self->base.base.pos_x,
+		((float)os_rand())/__UINT32_MAX__*8 - 2.0f, ((float)os_rand())/__UINT32_MAX__*8 - 2.0f
+	);
+	e = RegistGameEvent(
+		bullet, Catadioptric_OnCreate, Catadioptric_OnUpdate,
+		Catadioptric_OnDestroy, Catadioptric_OnRender
+	);
+	Push(&Engine_BulletEvents, e);
 }
 
 Flandre_GameObject_Enemy* Flandre_Init()
@@ -179,7 +187,7 @@ Flandre_GameObject_Enemy* Flandre_Init()
 	Flandre_GameObject_Enemy* self = malloc(sizeof(Flandre_GameObject_Enemy));
 	GameObject_Enemy_Init(
 		&self->base, Flandre_MAX_LIFE,
-		__WIDTH/2, 15,
+		__WIDTH/2, 25,
 		4, 8, 8, Img_Flandre
 	);
 	self->create_time = GetTime();
@@ -195,11 +203,11 @@ void Flandre_OnCreate(Flandre_GameObject_Enemy* self)
 
 void Flandre_OnUpdate(Flandre_GameObject_Enemy* self)
 {
-	if (self->base.life > 60000)
+	if (self->base.life > 30000)
 	{
 		self->skill = 0;
 	}
-	else if (self->base.life > 40000)
+	else if (self->base.life > 20000)
 	{
 		if (self->skill != 1)
 		{
@@ -207,12 +215,15 @@ void Flandre_OnUpdate(Flandre_GameObject_Enemy* self)
 			self->skill_param = 0;
 		}
 	}
-	else if (self->base.life > 20000)
+	else if (self->base.life > 10000)
 	{
 		if (self->skill != 2)
 		{
 			self->skill = 2;
 			self->skill_param = 0;
+			self->base.base.pos_x = __WIDTH/2;
+			self->base.base.pos_y = 25;
+			self->base.base.speed_x = 0;
 		}
 	}
 	else

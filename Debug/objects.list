@@ -40,6 +40,7 @@
 "Src/Scripts/Prefebs/StarbowBreak_GameObject_Bullet.o"
 "Src/Scripts/Routines/Demo4_Routine.o"
 "Src/Util/LinkedList.o"
+"Src/Util/Random.o"
 "Src/Util/Renderer.o"
 "Src/Util/Time.o"
 "Startup/startup_stm32f103rctx.o"

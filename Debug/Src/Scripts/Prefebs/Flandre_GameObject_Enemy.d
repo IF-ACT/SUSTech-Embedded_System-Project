@@ -34,7 +34,8 @@ Src/Scripts/Prefebs/Flandre_GameObject_Enemy.o: \
  N:/OneDrive\ -\ Platinum/University/3/CS301_Embedded_System/Project/SUSTech-Embedded_System-Project/Img/Img_Flandre.h \
  N:/OneDrive\ -\ Platinum/University/3/CS301_Embedded_System/Project/SUSTech-Embedded_System-Project/Img/Img_Leavatain.h \
  N:/OneDrive\ -\ Platinum/University/3/CS301_Embedded_System/Project/SUSTech-Embedded_System-Project/Img/Img_KagomeKagome.h \
- N:/OneDrive\ -\ Platinum/University/3/CS301_Embedded_System/Project/SUSTech-Embedded_System-Project/Img/Img_BigBullet.h
+ N:/OneDrive\ -\ Platinum/University/3/CS301_Embedded_System/Project/SUSTech-Embedded_System-Project/Img/Img_BigBullet.h \
+ ../Inc/mygpio.h ../Inc/Random.h
 
 ../Src/Scripts/Prefebs/Flandre_GameObject_Enemy.h:
 
@@ -115,3 +116,7 @@ N:/OneDrive\ -\ Platinum/University/3/CS301_Embedded_System/Project/SUSTech-Embe
 N:/OneDrive\ -\ Platinum/University/3/CS301_Embedded_System/Project/SUSTech-Embedded_System-Project/Img/Img_KagomeKagome.h:
 
 N:/OneDrive\ -\ Platinum/University/3/CS301_Embedded_System/Project/SUSTech-Embedded_System-Project/Img/Img_BigBullet.h:
+
+../Inc/mygpio.h:
+
+../Inc/Random.h:

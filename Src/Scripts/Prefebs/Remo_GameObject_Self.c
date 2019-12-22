@@ -14,13 +14,13 @@ void Remo_Init(
 ){
 	GameObject_Self_Init(
 		&self->base,
-		1,
+		SELF_LIFE_MAX,
 		pos_x, pos_y,
 		1,
 		4, 4,
 		Img_GreenBlock_4x4
 	);
-	self->fire_rank = 1;
+	self->fire_rank = 4;
 }
 
 void Remo_OnCreate(Remo_GameObject_Self* self)
@@ -38,13 +38,16 @@ void Remo_OnUpdate(Remo_GameObject_Self* self)
 		self->fire_rank++;
 		Game_KillCount -= 20;
 	}
+	// Recover
+	if (!(GetTime()%10) && self->base.life < SELF_LIFE_MAX)
+		self->base.life++;
 	// fire
 	if (!(GetTime()%2))
 	{
 		if (self->fire_rank == 1 || self->fire_rank == 4) // basic
 		{
 			bullet = malloc(sizeof(RoyalCoin_GameObject_Bullet));
-			RoyalCoin_Init(bullet, self->base.base.pos_x, self->base.base.pos_y, 0.0f, -3.5f);
+			RoyalCoin_Init(bullet, self->base.base.pos_x, self->base.base.pos_y, 0.0f, -4.5f);
 			e = RegistGameEvent(
 				bullet,
 				RoyalCoin_OnCreate, RoyalCoin_OnUpdate,
@@ -55,7 +58,7 @@ void Remo_OnUpdate(Remo_GameObject_Self* self)
 		if (self->fire_rank >= 2) // Double bullets
 		{
 			bullet = malloc(sizeof(RoyalCoin_GameObject_Bullet));
-			RoyalCoin_Init(bullet, self->base.base.pos_x - 1, self->base.base.pos_y, 0.0f, -3.5f);
+			RoyalCoin_Init(bullet, self->base.base.pos_x - 2, self->base.base.pos_y, 0.0f, -4.5f);
 			e = RegistGameEvent(
 				bullet,
 				RoyalCoin_OnCreate, RoyalCoin_OnUpdate,
@@ -64,7 +67,7 @@ void Remo_OnUpdate(Remo_GameObject_Self* self)
 			Push(&Engine_BulletEvents, e);
 
 			bullet = malloc(sizeof(RoyalCoin_GameObject_Bullet));
-			RoyalCoin_Init(bullet, self->base.base.pos_x + 1, self->base.base.pos_y, 0.0f, -3.5f);
+			RoyalCoin_Init(bullet, self->base.base.pos_x + 2, self->base.base.pos_y, 0.0f, -4.5f);
 			e = RegistGameEvent(
 				bullet,
 				RoyalCoin_OnCreate, RoyalCoin_OnUpdate,
@@ -75,7 +78,7 @@ void Remo_OnUpdate(Remo_GameObject_Self* self)
 			if (self->fire_rank >= 3) // Side bullets
 			{
 				bullet = malloc(sizeof(RoyalCoin_GameObject_Bullet));
-				RoyalCoin_Init(bullet, self->base.base.pos_x - 1, self->base.base.pos_y, -1.0f, -3.0f);
+				RoyalCoin_Init(bullet, self->base.base.pos_x - 2, self->base.base.pos_y, -1.6f, -4.1f);
 				e = RegistGameEvent(
 					bullet,
 					RoyalCoin_OnCreate, RoyalCoin_OnUpdate,
@@ -84,7 +87,7 @@ void Remo_OnUpdate(Remo_GameObject_Self* self)
 				Push(&Engine_BulletEvents, e);
 
 				bullet = malloc(sizeof(RoyalCoin_GameObject_Bullet));
-				RoyalCoin_Init(bullet, self->base.base.pos_x + 1, self->base.base.pos_y, 1.0f, -3.0f);
+				RoyalCoin_Init(bullet, self->base.base.pos_x + 2, self->base.base.pos_y, 1.6f, -4.1f);
 				e = RegistGameEvent(
 					bullet,
 					RoyalCoin_OnCreate, RoyalCoin_OnUpdate,
@@ -96,7 +99,7 @@ void Remo_OnUpdate(Remo_GameObject_Self* self)
 			if (self->fire_rank == 4) // Full side
 			{
 				bullet = malloc(sizeof(RoyalCoin_GameObject_Bullet));
-				RoyalCoin_Init(bullet, self->base.base.pos_x - 2, self->base.base.pos_y, -1.2f, -2.8f);
+				RoyalCoin_Init(bullet, self->base.base.pos_x - 3, self->base.base.pos_y, -2.0f, -3.5f);
 				e = RegistGameEvent(
 					bullet,
 					RoyalCoin_OnCreate, RoyalCoin_OnUpdate,
@@ -105,7 +108,7 @@ void Remo_OnUpdate(Remo_GameObject_Self* self)
 				Push(&Engine_BulletEvents, e);
 
 				bullet = malloc(sizeof(RoyalCoin_GameObject_Bullet));
-				RoyalCoin_Init(bullet, self->base.base.pos_x + 2, self->base.base.pos_y, 1.2f, -2.8f);
+				RoyalCoin_Init(bullet, self->base.base.pos_x + 3, self->base.base.pos_y, 2.0f, -3.5f);
 				e = RegistGameEvent(
 					bullet,
 					RoyalCoin_OnCreate, RoyalCoin_OnUpdate,
@@ -115,7 +118,6 @@ void Remo_OnUpdate(Remo_GameObject_Self* self)
 			}
 		}
 	}	
-
 
 	GameObject_Self_OnUpdate(&self->base);
 }

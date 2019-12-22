@@ -13,6 +13,8 @@
 #include <string.h>
 #include <stdlib.h>
 
+bool __flash;
+
 bool __Crash(GameObject* obj1, GameObject* obj2)
 {
 	float cdis = (float)(obj1->collider + obj2->collider);
@@ -84,6 +86,11 @@ unsigned __ObjectEvent_LoopOnce(LinkedList* events, bool is_bullet)
 					{
 						((GameObject_Self*)Engine_SelfEvent->game_object)->life = 0;
 					}
+					if (!__flash)
+					{
+						// TODO
+						// open led
+					}
 				}	
 			}
 			else
@@ -130,7 +137,7 @@ unsigned __ObjectEvent_LoopOnce(LinkedList* events, bool is_bullet)
 
 void GameEngineInit()
 {
-	Game_Life = 3;
+	Game_Life = 1;
 	Game_KillCount = 0;
 	Game_Score = 0;
 	Game_BombNum = 0;
@@ -150,6 +157,8 @@ void GameEngineInit()
 	Engine_UIEvents.head = malloc(sizeof(Node));
 	Engine_UIEvents.head->next = NULL;
 	Engine_UIEvents.tail = Engine_UIEvents.head;
+
+	__flash = false;
 }
 
 void GameEngineLoop(void (*OnLoop)(void))
@@ -159,6 +168,12 @@ void GameEngineLoop(void (*OnLoop)(void))
 	unsigned i, j;
 
 	Time_OnStart();
+
+	if (__flash)
+	{
+		// TODO
+		// close led
+	}
 
 	while (!Game_ChapterPassed)
 	{
@@ -221,8 +236,7 @@ void GameEngineLoop(void (*OnLoop)(void))
 		}
 		
 		// Reset
-		if (!(GetTime()%8))
-			Engine_KeyPressed = 0;
+		Engine_KeyPressed = 0;
 		// Flush
 		screen = Flush(screen);
 

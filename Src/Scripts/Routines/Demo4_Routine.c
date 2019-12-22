@@ -82,7 +82,7 @@ void Demo4_Routine(){
 
 	// regester demo 1
 	Remo_GameObject_Self* remo = malloc(sizeof(Remo_GameObject_Self));
-	Remo_Init(remo, 28, 65);
+	Remo_Init(remo, 38, 85);
 	GameEvent* event = RegistGameEvent(
 		remo, Remo_OnCreate, Remo_OnUpdate, Remo_OnDestroy, Remo_OnRender
 	);
