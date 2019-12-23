@@ -14,18 +14,23 @@
 #include <stdio.h>
 #include <string.h>
 
+
 void Demo4_OnLoop_1()
 {
-	if (GetTime() == 100)
+	static int x[] = {10, 50,  10, 50};
+	static int y[] = {10, 10,  30, 30};
+	static int index = 0;
+	if (!(GetTime() % 100) && GetTime() <= 500)
 	{
 		GameEvent* event;
 		Demo2_GameObject_Enemy* enemy = malloc(sizeof(Demo2_GameObject_Enemy));
 		printlnf("enemy pointer: %d", enemy);
 		Demo2_Init(
-			enemy, 200,
-			10, 10,
+			enemy, 20,
+			x[index], y[index],
 			2
 		);
+		index++;
 		event = RegistGameEvent(
 			enemy,
 			Demo2_OnCreate, Demo2_OnUpdate,
@@ -33,7 +38,7 @@ void Demo4_OnLoop_1()
 		);
 		Push(&Engine_EnemyEvents, event);
 	}
-	if (GetTime() > 100 && !(GetTime()%20) && GetTime() < 300)
+	if (GetTime() > 500 && !(GetTime()%20) && GetTime() < 800)
 	{
 		Goast_GameObject_Enemy* goast = Goast_Init(60, 10, 0);
 		GameEvent* event = RegistGameEvent(
@@ -44,7 +49,7 @@ void Demo4_OnLoop_1()
 		Push(&Engine_EnemyEvents, event);
 	}
 	
-	if (GetTime() == 300)
+	if (GetTime() == 900)
 	{
 		GameEvent* event;
 		Flandre_GameObject_Enemy* flandre = Flandre_Init();

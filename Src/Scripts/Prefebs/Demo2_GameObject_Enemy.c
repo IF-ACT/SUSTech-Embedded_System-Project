@@ -36,11 +36,11 @@ void Demo2_OnCreate(Demo2_GameObject_Enemy* self)
 
 void Demo2_OnUpdate(Demo2_GameObject_Enemy* self)
 {
-	if (!(GetTime()%4))
+	if (!(GetTime()%20))
 	{
 		BasicBullet_GameObject_Bullet* bullet;
 		GameEvent* e;
-		bullet = BasicBullet_Init(30, 5, self->base.base.pos_x, self->base.base.pos_y, 0, 2.5, 1, 2, 2, Img_RedBlock_4x4, true);
+		bullet = BasicBullet_Init(50, 5, self->base.base.pos_x, self->base.base.pos_y, 0, 1.5, 1, 2, 2, Img_RedBlock_4x4, true);
 		e = RegistGameEvent(bullet, BasicBullet_OnCreate, BasicBullet_OnUpdate, BasicBullet_OnDestroy, BasicBullet_OnRender);
 		Push(&Engine_BulletEvents, e);
 	}

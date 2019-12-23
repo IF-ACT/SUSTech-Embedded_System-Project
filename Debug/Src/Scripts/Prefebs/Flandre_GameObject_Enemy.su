@@ -7,4 +7,4 @@ Flandre_GameObject_Enemy.c:185:27:Flandre_Init	32	static
 Flandre_GameObject_Enemy.c:199:6:Flandre_OnCreate	16	static
 Flandre_GameObject_Enemy.c:204:6:Flandre_OnUpdate	16	static
 Flandre_GameObject_Enemy.c:263:6:Flandre_OnDestroy	16	static
-Flandre_GameObject_Enemy.c:268:6:Flandre_OnRender	16	static
+Flandre_GameObject_Enemy.c:269:6:Flandre_OnRender	16	static

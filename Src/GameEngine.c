@@ -13,7 +13,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-bool __flash;
+static bool __flash;
 
 bool __Crash(GameObject* obj1, GameObject* obj2)
 {
@@ -90,6 +90,9 @@ unsigned __ObjectEvent_LoopOnce(LinkedList* events, bool is_bullet)
 					{
 						// TODO
 						// open led
+						HAL_GPIO_WritePin(GPIOA, GPIO_PIN_8, GPIO_PIN_RESET);
+						HAL_GPIO_WritePin(GPIOD, GPIO_PIN_2, GPIO_PIN_RESET);
+						__flash = true;
 					}
 				}	
 			}
@@ -159,6 +162,7 @@ void GameEngineInit()
 	Engine_UIEvents.tail = Engine_UIEvents.head;
 
 	__flash = false;
+	println("Init finished");
 }
 
 void GameEngineLoop(void (*OnLoop)(void))
@@ -169,11 +173,7 @@ void GameEngineLoop(void (*OnLoop)(void))
 
 	Time_OnStart();
 
-	if (__flash)
-	{
-		// TODO
-		// close led
-	}
+
 
 	while (!Game_ChapterPassed)
 	{
@@ -181,6 +181,16 @@ void GameEngineLoop(void (*OnLoop)(void))
 		i = 0; j = 0;
 		screen = InitScreen(screen);
 		Time_OnUpdate();
+
+		if (__flash)
+		{
+			// TODO
+			// close led
+			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_8, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(GPIOD, GPIO_PIN_2, GPIO_PIN_SET);
+			__flash = false;
+		}
+
 
 		// Event on loop
 		OnLoop();

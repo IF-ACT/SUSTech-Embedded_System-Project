@@ -262,6 +262,7 @@ void Flandre_OnUpdate(Flandre_GameObject_Enemy* self)
 
 void Flandre_OnDestroy(Flandre_GameObject_Enemy* self)
 {
+	Game_ChapterPassed = true;
 	free(self);
 }
 
