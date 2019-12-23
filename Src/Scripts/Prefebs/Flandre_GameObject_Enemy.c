@@ -188,7 +188,7 @@ Flandre_GameObject_Enemy* Flandre_Init()
 	GameObject_Enemy_Init(
 		&self->base, Flandre_MAX_LIFE,
 		__WIDTH/2, 25,
-		4, 20, 20, Img_Flandre
+		10, 20, 20, Img_Flandre
 	);
 	self->create_time = GetTime();
 	self->skill_param = 0;

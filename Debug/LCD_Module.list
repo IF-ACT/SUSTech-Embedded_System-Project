@@ -19691,7 +19691,7 @@ Flandre_GameObject_Enemy* Flandre_Init()
  800948c:	9302      	str	r3, [sp, #8]
  800948e:	2314      	movs	r3, #20
  8009490:	9301      	str	r3, [sp, #4]
- 8009492:	2304      	movs	r3, #4
+ 8009492:	230a      	movs	r3, #10
  8009494:	9300      	str	r3, [sp, #0]
  8009496:	2319      	movs	r3, #25
  8009498:	2226      	movs	r2, #38	; 0x26
@@ -19699,7 +19699,7 @@ Flandre_GameObject_Enemy* Flandre_Init()
  800949e:	f7f9 fbce 	bl	8002c3e <GameObject_Enemy_Init>
 		&self->base, Flandre_MAX_LIFE,
 		__WIDTH/2, 25,
-		4, 20, 20, Img_Flandre
+		10, 20, 20, Img_Flandre
 	);
 	self->create_time = GetTime();
  80094a2:	f000 ff27 	bl	800a2f4 <GetTime>
