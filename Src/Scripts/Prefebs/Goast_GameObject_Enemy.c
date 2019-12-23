@@ -1,10 +1,10 @@
 #include "Goast_GameObject_Enemy.h"
 
 #include "GameEngine.h"
-#include "Img_Goast.h"
 #include "Time.h"
 #include "BasicBullet_GameObject_Bullet.h"
 #include "Renderer.h"
+#include "Img_Goast.h"
 
 #define MAX(a, b) (a>b?a:b)
 

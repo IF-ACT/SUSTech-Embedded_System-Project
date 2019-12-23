@@ -33,8 +33,18 @@ void Demo4_OnLoop_1()
 		);
 		Push(&Engine_EnemyEvents, event);
 	}
+	if (GetTime() > 100 && !(GetTime()%20) && GetTime() < 300)
+	{
+		Goast_GameObject_Enemy* goast = Goast_Init(60, 10, 0);
+		GameEvent* event = RegistGameEvent(
+			goast,
+			Goast_OnCreate, Goast_OnUpdate,
+			Goast_OnDestroy, Goast_OnRender
+		);
+		Push(&Engine_EnemyEvents, event);
+	}
 	
-	if (GetTime() == 200)
+	if (GetTime() == 300)
 	{
 		GameEvent* event;
 		Flandre_GameObject_Enemy* flandre = Flandre_Init();
@@ -64,7 +74,7 @@ void Demo4_OnLoop_1()
 		Push(&Engine_EnemyEvents, event);
 	}
 
-	if (GetTime() > 200 && !(GetTime()%15))
+	if (GetTime() > 200 && !(GetTime()%150))
 	{
 		Goast_GameObject_Enemy* goast = Goast_Init(40, 10, 0);
 		GameEvent* event = RegistGameEvent(

@@ -24,8 +24,8 @@ void __Flandre_Normal(Flandre_GameObject_Enemy* self)
 		GameEvent* e;
 		bullet = BasicBullet_Init(
 			100, 12, self->base.base.pos_x, self->base.base.pos_x,
-			((float)os_rand())/__UINT32_MAX__*2 - 0.5f, ((float)os_rand())/__UINT32_MAX__*2 - 0.5f,
-			4, 8, 8, Img_BigBullet, true
+			((float)os_rand())/__UINT32_MAX__*3 - 0.5f, ((float)os_rand())/__UINT32_MAX__*3 - 0.5f,
+			5, 10, 10, Img_BigBullet, true
 		);
 		e = RegistGameEvent(
 			bullet, BasicBullet_OnCreate, BasicBullet_OnUpdate,
@@ -188,7 +188,7 @@ Flandre_GameObject_Enemy* Flandre_Init()
 	GameObject_Enemy_Init(
 		&self->base, Flandre_MAX_LIFE,
 		__WIDTH/2, 25,
-		4, 8, 8, Img_Flandre
+		4, 20, 20, Img_Flandre
 	);
 	self->create_time = GetTime();
 	self->skill_param = 0;

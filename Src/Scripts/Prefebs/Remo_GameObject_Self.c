@@ -1,12 +1,12 @@
 #include "Remo_GameObject_Self.h"
 
-#include "Img_TestImages.h"
 #include "GameEvent.h"
 #include "GameEngine.h"
 #include "Renderer.h"
 #include "RoyalCoin_GameObject_Bullet.h"
 #include "mygpio.h"
 #include "Time.h"
+#include "Img_Moliza.h"
 
 void Remo_Init(
 	Remo_GameObject_Self* self,
@@ -16,11 +16,11 @@ void Remo_Init(
 		&self->base,
 		SELF_LIFE_MAX,
 		pos_x, pos_y,
-		1,
-		4, 4,
-		Img_GreenBlock_4x4
+		2,
+		20, 20,
+		Img_Moliza
 	);
-	self->fire_rank = 4;
+	self->fire_rank = 1;
 }
 
 void Remo_OnCreate(Remo_GameObject_Self* self)
@@ -33,7 +33,7 @@ void Remo_OnUpdate(Remo_GameObject_Self* self)
 	RoyalCoin_GameObject_Bullet* bullet;
 	GameEvent* e;
 
-	if (Game_KillCount > 20 && self->fire_rank <= 4)
+	if (Game_KillCount > 4 && self->fire_rank <= 4)
 	{
 		self->fire_rank++;
 		Game_KillCount -= 20;
