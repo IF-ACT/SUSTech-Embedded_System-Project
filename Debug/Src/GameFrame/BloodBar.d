@@ -1,5 +1,4 @@
-Src/GameEngine.o: ../Src/GameEngine.c ../Inc/GameEngine.h \
- ../Inc/LinkedList.h ../Inc/GameEvent.h \
+Src/GameFrame/BloodBar.o: ../Src/GameFrame/BloodBar.c ../Inc/BloodBar.h \
  D:/worksoftware/STM32CubeIDE_1.0.2/newworkplace/SUSTech-Embedded_System-Project/Inc/OverAllEnv/lcd.h \
  D:/worksoftware/STM32CubeIDE_1.0.2/newworkplace/SUSTech-Embedded_System-Project/Inc/OverAllEnv/main.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h \
@@ -23,16 +22,9 @@ Src/GameEngine.o: ../Src/GameEngine.c ../Inc/GameEngine.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h \
- ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
- ../Inc/Renderer.h ../Inc/GameObject.h ../Inc/Time.h ../Inc/mygpio.h \
- ../Inc/GameObject.h ../Inc/GameObject_Bullet.h ../Inc/GameObject_Self.h \
- ../Inc/GameObject_Enemy.h ../Inc/BloodBar.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 
-../Inc/GameEngine.h:
-
-../Inc/LinkedList.h:
-
-../Inc/GameEvent.h:
+../Inc/BloodBar.h:
 
 D:/worksoftware/STM32CubeIDE_1.0.2/newworkplace/SUSTech-Embedded_System-Project/Inc/OverAllEnv/lcd.h:
 
@@ -81,21 +73,3 @@ D:/worksoftware/STM32CubeIDE_1.0.2/newworkplace/SUSTech-Embedded_System-Project/
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h:
 
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:
-
-../Inc/Renderer.h:
-
-../Inc/GameObject.h:
-
-../Inc/Time.h:
-
-../Inc/mygpio.h:
-
-../Inc/GameObject.h:
-
-../Inc/GameObject_Bullet.h:
-
-../Inc/GameObject_Self.h:
-
-../Inc/GameObject_Enemy.h:
-
-../Inc/BloodBar.h:

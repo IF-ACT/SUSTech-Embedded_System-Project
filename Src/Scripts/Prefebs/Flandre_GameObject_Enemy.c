@@ -24,7 +24,7 @@ void __Flandre_Normal(Flandre_GameObject_Enemy* self)
 		GameEvent* e;
 		bullet = BasicBullet_Init(
 			100, 12, self->base.base.pos_x, self->base.base.pos_x,
-			((float)os_rand())/__UINT32_MAX__*3 - 0.5f, ((float)os_rand())/__UINT32_MAX__*3 - 0.5f,
+			((float)os_rand())/__UINT32_MAX__* 4.5f - 0.75f, ((float)os_rand())/__UINT32_MAX__*4.5f - 0.75f,
 			5, 10, 10, Img_BigBullet, true
 		);
 		e = RegistGameEvent(

@@ -39,7 +39,7 @@ void Remo_OnUpdate(Remo_GameObject_Self* self)
 		Game_KillCount -= 20;
 	}
 	// Recover
-	if (!(GetTime()%10) && self->base.life < SELF_LIFE_MAX)
+	if (!(GetTime()%13) && self->base.life < SELF_LIFE_MAX)
 		self->base.life++;
 	// fire
 	if (!(GetTime()%2))

@@ -17,10 +17,10 @@
 
 void Demo4_OnLoop_1()
 {
-	static int x[] = {10, 50,  10, 50};
-	static int y[] = {10, 10,  30, 30};
+	static int x[] = {10, 50,  20, 60};
+	static int y[] = {10, 10,  20, 20};
 	static int index = 0;
-	if (!(GetTime() % 100) && GetTime() <= 500)
+	if (!(GetTime() % 20) && GetTime() <= 80)
 	{
 		GameEvent* event;
 		Demo2_GameObject_Enemy* enemy = malloc(sizeof(Demo2_GameObject_Enemy));
@@ -38,7 +38,8 @@ void Demo4_OnLoop_1()
 		);
 		Push(&Engine_EnemyEvents, event);
 	}
-	if (GetTime() > 500 && !(GetTime()%20) && GetTime() < 800)
+
+	if (GetTime() > 200 && !(GetTime()%20) && GetTime() < 600)
 	{
 		Goast_GameObject_Enemy* goast = Goast_Init(60, 10, 0);
 		GameEvent* event = RegistGameEvent(
@@ -48,8 +49,18 @@ void Demo4_OnLoop_1()
 		);
 		Push(&Engine_EnemyEvents, event);
 	}
+	if (GetTime() > 400 && !(GetTime()%20))
+		{
+			Goast_GameObject_Enemy* goast = Goast_Init(10, 10, 1);
+			GameEvent* event = RegistGameEvent(
+				goast,
+				Goast_OnCreate, Goast_OnUpdate,
+				Goast_OnDestroy, Goast_OnRender
+			);
+			Push(&Engine_EnemyEvents, event);
+		}
 	
-	if (GetTime() == 900)
+	if (GetTime() == 600)
 	{
 		GameEvent* event;
 		Flandre_GameObject_Enemy* flandre = Flandre_Init();

@@ -7,6 +7,7 @@
 #include "GameObject_Bullet.h"
 #include "GameObject_Self.h"
 #include "GameObject_Enemy.h"
+#include "BloodBar.h"
 
 #include "lcd.h"
 #include <stdio.h>
@@ -114,6 +115,7 @@ unsigned __ObjectEvent_LoopOnce(LinkedList* events, bool is_bullet)
 						{
 							((GameObject_Enemy*)((GameEvent*)it_temp->object)->game_object)->life = 0;
 							Game_KillCount++;
+							Game_Score += 200;
 						}
 					}
 				}
@@ -173,7 +175,7 @@ void GameEngineLoop(void (*OnLoop)(void))
 
 	Time_OnStart();
 
-
+	BloodBar_Init();
 
 	while (!Game_ChapterPassed)
 	{
@@ -226,6 +228,9 @@ void GameEngineLoop(void (*OnLoop)(void))
 			else
 			{
 				Engine_SelfEvent->OnRender(self_object, screen);
+				BloodBar_Update(
+						(int)((((GameObject_Self*)self_object)->life)*10/SELF_LIFE_MAX)
+				);
 				i++;
 			}
 		}
@@ -249,6 +254,8 @@ void GameEngineLoop(void (*OnLoop)(void))
 		Engine_KeyPressed = 0;
 		// Flush
 		screen = Flush(screen);
+		// Score
+		Game_Score++;
 
 		if (Game_ChapterPassed)
 			break;
@@ -266,15 +273,13 @@ void GameOver()
 	BACK_COLOR = GRAY;
 	//LCD_DrawRectangle(30, 40, 230, 64);
 	//LCD_Color_Fill(30, 40, 230, 64,WHITE);
+	LCD_ShowString(30, 10, 140, 24, 14, (uint8_t*) "Score :");
 	LCD_ShowString(30, 80, 200, 24, 24, (uint8_t*) "Game Over ^_^");
 
-	LCD_Color_Fill(20, 110, 220, 112,BLACK);
+	//LCD_Color_Fill(20, 110, 220, 112,BLACK);
 
-	char str[] = "Score :";
-	char score[10];
-	itoa(Game_Score, score, 10);
-	strcat(str,score);
-	LCD_ShowString(30, 130, 140, 24, 14, (uint8_t*) str);
+	LCD_ShowNum(100, 30 ,Game_Score, 5,24);
+	exit(0);
 }
 
 
