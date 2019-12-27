@@ -2,6 +2,6 @@
 #define __RANDOM_H
 
 void os_srand(unsigned seek);
-unsigned os_rand (void);
+unsigned os_rand();
 
 #endif

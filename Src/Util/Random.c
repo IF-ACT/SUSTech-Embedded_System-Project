@@ -11,7 +11,7 @@ void os_srand(unsigned seek)
     Srandx =seek;
 }
 
-unsigned os_rand (void)
+unsigned os_rand()
 {
     Srandx = Srandx *SrandK +SrandB ;
     return (Srandx>>1);

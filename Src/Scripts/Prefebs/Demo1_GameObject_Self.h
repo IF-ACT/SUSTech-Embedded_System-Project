@@ -39,10 +39,4 @@ void Demo1_OnUpdate(Demo1_GameObject_Self* self);
 void Demo1_OnDestroy(Demo1_GameObject_Self* self);
 void Demo1_OnRender(Demo1_GameObject_Self* self, Color** screen);
 
-/*下面的方法直接调用对应父类方法即可，不需要做修改*/
-
-bool __Demo1_Created(Demo1_GameObject_Self* self);
-
-bool __Demo1_ToDestroy(Demo1_GameObject_Self* self);
-
 #endif
