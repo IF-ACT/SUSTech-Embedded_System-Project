@@ -1,6 +1,6 @@
 # 南方科技大学嵌入式Project & 东方Project
 
-English version: [README_EN](./README_EN.md) (not complicated yet)
+English version: [README_EN](./README_EN.md) (not completed yet)
 
 ## 使用环境
 
