@@ -21,7 +21,7 @@ English version: [README_EN](./README_EN.md) (not completed yet)
 
 - 请勿使用STM32CubeIDE的自动生成代码功能，因为代码路径已经改变，环境为手动配置，使用自动生成会破坏当前环境，导致编译失败
 - 编译后在[Debug](./Debug)文件夹下会生成[后缀名为hex的二进制文件](./Debug/LCD_Module.hex)
-- FlyMcu配置如图，将文件烧录到开发板上![FlyMcu配置](.\ReadmeInfo\FlyMcu配置.png)
+- FlyMcu配置如图，将文件烧录到开发板上![FlyMcu配置](.\ReadmeInfo\FlyMcu.png)
 
 - 开发板点击Awake按钮后即可开始游戏
 
