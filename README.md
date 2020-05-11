@@ -1,5 +1,7 @@
 # 南方科技大学嵌入式Project & 东方Project
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/6c99cdaba60742cbb1f712236095b7de)](https://app.codacy.com/manual/IF-ACT/SUSTech-Embedded_System-Project?utm_source=github.com&utm_medium=referral&utm_content=IF-ACT/SUSTech-Embedded_System-Project&utm_campaign=Badge_Grade_Settings)
+
 English version: [README_EN](./README_EN.md) (not completed yet)
 
 ## 使用环境
